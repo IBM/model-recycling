@@ -3,8 +3,9 @@ import pandas as pd
 import math
 from IPython.display import HTML
 
-html_file_path = '../index.html'
-models_csv_path = '../results/models_results_roberta_base.csv'
+roberta_absolute_scores_html_file_path = '../roberta_absolute_scores_table.html'
+roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
+roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
 dropped_columns = ['base_model', 'size', 'tokenizer', 'model_type', 'classification', 'layers',
                    'from_flax', 'from_tf', 'last_modified']
 columns_to_avg = ['cola', 'mrpc', 'qqp', 'stsb', 'boolq', 'cb', 'copa', 'multirc', 'wic', 'wsc', 'ag_news', 'isear',
@@ -28,7 +29,7 @@ html_suffix = """
   """
 
 if __name__ == '__main__':
-    models_df = pd.read_csv(models_csv_path)
+    models_df = pd.read_csv(roberta_absolute_scores_models_csv_path)
     models_df = models_df.drop(columns=dropped_columns)
     models_df['avg'] = models_df.apply(lambda row:
                                        np.average([row[column] for column in columns_to_avg
@@ -44,7 +45,10 @@ if __name__ == '__main__':
          {"selector": "th", "props": [("border", "1px solid grey")]}
          ]
     )
-    with open(html_file_path, 'w') as f:
+    with open(roberta_absolute_scores_html_file_path, 'w') as f:
         f.write(html_prefix)
         f.write(HTML(style.render()).__html__())
         f.write(html_suffix)
+
+    pretrain_df = pd.read_csv(roberta_pretrain_scores_csv_path, sep='\t')
+    print()
