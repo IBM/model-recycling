@@ -1,3 +1,8 @@
+---
+layout: default
+nav_order: 3
+---
+
 # FAQ
 
 ## Why should I use a different base model than the vanilla pretrained model?

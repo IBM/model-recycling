@@ -1,3 +1,9 @@
+---
+layout: default
+title: Home
+nav_order: 0
+
+---
 # Welcome to model-recycling page
 
 Hardly anyone trains from scratch anymore, we all finetune over a pretrained model. Research is slowly reaches consensus that some finetuned models are better base models than the pretrained models themselves. This site presents a dynamic view of the best models to choose, given that you chose the model's size and architecture.</p>
