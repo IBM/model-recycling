@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Pretrain
+title: Finetune over pretrain scores 
 parent: Rankings
-nav_order: 6
 ---
 
 |      |   avg |   20_newsgroup |   ag_news |   amazon_reviews_multi |   anli |   boolq |    cb |   cola |   copa |   dbpedia |   esnli |   financial_phrasebank |   imdb |   isear |   mnli |   mrpc |   multirc |   poem_sentiment |   qnli |   qqp |   rotten_tomatoes |   rte |   sst2 |   sst_5bins |   stsb |   trec_coarse |   trec_fine |   tweet_ev_emoji |   tweet_ev_emotion |   tweet_ev_hate |   tweet_ev_irony |   tweet_ev_offensive |   tweet_ev_sentiment |   wic |   wnli |   wsc |   yahoo_answers |

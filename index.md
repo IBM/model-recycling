@@ -22,10 +22,8 @@ We rank finetuned models found in HuggingFace per architecture. We efficiently c
 [//]: # (The <a href="roberta_absolute_scores_table.html">page</a> contains ranking of HF models.</p>)
 Currently: the best RoBERTa-base models are:
 
-aux_links_new_tab: false
-<<<Short_Roberta-base>>>
-The full [ranking](roberta_absolute_scores_table.html).<br>
-The [page](pretrain_scores_table.md) pretrain scores table.
-[page]({{ site.baseurl }}{% link pretrain_scores_table.md %})
+
+[page](pretrain_scores_table.md)
+
 
 
