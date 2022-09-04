@@ -1,2 +1,8 @@
 markdown: kramdown
 remote_theme: just-the-docs/just-the-docs
+aux_links:
+  "Model Recycling on GitHub":
+    - "//github.com/IBM/model-recycling"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
