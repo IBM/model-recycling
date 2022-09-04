@@ -4,6 +4,7 @@ import math
 from IPython.display import HTML
 
 roberta_absolute_scores_html_file_path = '../roberta_absolute_scores_table.html'
+roberta_absolute_scores_avg_html_file_path = '../roberta_absolute_scores_avg_table.html'
 pretrain_scores_html_file_path = '../pretrain_scores_table.html'
 roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
 roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
@@ -58,12 +59,15 @@ if __name__ == '__main__':
     pretrain_df['score'] = pretrain_df.apply(
         lambda row: row['accuracy'] if not math.isnan(row['accuracy']) else row['spearmanr'], axis=1)
     pretrain_df['score'] = pretrain_df['score'].apply(lambda val: 100 * val)
+
+    avg_pretrain_df = pretrain_df.groupby('stage').agg(np.mean)
     std_df = pretrain_df.groupby('dataset name').agg(np.std)
     mean_df = pretrain_df.groupby('dataset name').agg(np.mean)
     pretrain_df = pd.concat([pd.pivot_table(mean_df, values=["score"], columns=['dataset name']),
                              pd.pivot_table(std_df, values=["score"], columns=['dataset name'])])
     pretrain_df.index = ['mean', 'std']
     pretrain_df = add_avg_and_sort_columns(pretrain_df)
+    pretrain_df.at['std', 'avg'] = avg_pretrain_df.std(axis=0)['score']
     print_table_to_html(pretrain_df, pretrain_scores_html_file_path)
 
     models_df = pd.read_csv(roberta_absolute_scores_models_csv_path)
@@ -80,3 +84,6 @@ if __name__ == '__main__':
     models_df.at[0, 'model_name'] = 'Pretrained Model'
 
     print_table_to_html(models_df, roberta_absolute_scores_html_file_path)
+
+    models_df = models_df[['model_name', 'avg', 'mnli_lp']]
+    print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
