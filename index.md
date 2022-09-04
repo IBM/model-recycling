@@ -23,6 +23,7 @@ We rank finetuned models found in HuggingFace per architecture. We efficiently c
 Currently: the best RoBERTa-base models are:
 
 For more information:<br>
+<<<Short_Roberta-base>>>
 The full [ranking](roberta_absolute_scores_table.html).<br>
 The [page](pretrain_scores_table.html) pretrain scores table.
  [another index](new_index.md) 
