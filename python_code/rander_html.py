@@ -1,11 +1,11 @@
 import numpy as np
 import pandas as pd
 import math
-from IPython.display import HTML
+import tabulate
 
 roberta_absolute_scores_html_file_path = '../roberta_absolute_scores_table.html'
 roberta_absolute_scores_avg_html_file_path = '../roberta_absolute_scores_avg_table.html'
-pretrain_scores_html_file_path = '../pretrain_scores_table.html'
+pretrain_scores_html_file_path = '../pretrain_scores_table.md'
 roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
 roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
 dropped_columns = ['base_model', 'size', 'tokenizer', 'model_type', 'classification', 'layers',
@@ -32,17 +32,9 @@ html_suffix = """
 
 
 def print_table_to_html(df, html_file_path):
-    df = df.style.format(precision=3)
-    style = df.set_table_styles(
-        [{"selector": "", "props": [("border", "1px solid grey")]},
-         {"selector": "tbody td", "props": [("border", "1px solid grey")]},
-         {"selector": "th", "props": [("border", "1px solid grey")]}
-         ]
-    )
+    pd.options.display.float_format = '{:,.2f}'.format
     with open(html_file_path, 'w') as f:
-        f.write(html_prefix)
-        f.write(HTML(style.render()).__html__())
-        f.write(html_suffix)
+        f.write(df.to_markdown(floatfmt='.2f'))
 
 
 def add_avg_and_sort_columns(df):
