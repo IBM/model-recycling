@@ -4,6 +4,7 @@ import math
 from IPython.display import HTML
 
 roberta_absolute_scores_html_file_path = '../roberta_absolute_scores_table.html'
+pretrain_scores_html_file_path = '../pretrain_scores_table.html'
 roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
 roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
 dropped_columns = ['base_model', 'size', 'tokenizer', 'model_type', 'classification', 'layers',
@@ -28,27 +29,54 @@ html_suffix = """
 </html>
   """
 
-if __name__ == '__main__':
-    models_df = pd.read_csv(roberta_absolute_scores_models_csv_path)
-    models_df = models_df.drop(columns=dropped_columns)
-    models_df['avg'] = models_df.apply(lambda row:
-                                       np.average([row[column] for column in columns_to_avg
-                                                   if not math.isnan(row[column])]),
-                                       axis=1)
-    models_df = models_df[sorted(models_df.columns, key=lambda st: (st!='model_name', st!='avg', st!='mnli_lp', st))]
-    models_df = models_df.sort_values(by=['avg', 'mnli_lp'], ascending=[False, False])
-    models_df = models_df.reset_index(drop=True)
-    models_df = models_df.style.format(precision=3)
-    style = models_df.set_table_styles(
+
+def print_table_to_html(df, html_file_path):
+    df = df.style.format(precision=3)
+    style = df.set_table_styles(
         [{"selector": "", "props": [("border", "1px solid grey")]},
          {"selector": "tbody td", "props": [("border", "1px solid grey")]},
          {"selector": "th", "props": [("border", "1px solid grey")]}
          ]
     )
-    with open(roberta_absolute_scores_html_file_path, 'w') as f:
+    with open(html_file_path, 'w') as f:
         f.write(html_prefix)
         f.write(HTML(style.render()).__html__())
         f.write(html_suffix)
 
+
+def add_avg_and_sort_columns(df):
+    df['avg'] = df.apply(lambda row:
+                         np.average([row[column] for column in columns_to_avg
+                                     if not math.isnan(row[column])]),
+                         axis=1)
+    df = df[sorted(df.columns, key=lambda st: (st != 'model_name', st != 'avg', st != 'mnli_lp', st))]
+    return df
+
+
+if __name__ == '__main__':
     pretrain_df = pd.read_csv(roberta_pretrain_scores_csv_path, sep='\t')
-    print()
+    pretrain_df['score'] = pretrain_df.apply(
+        lambda row: row['accuracy'] if not math.isnan(row['accuracy']) else row['spearmanr'], axis=1)
+    pretrain_df['score'] = pretrain_df['score'].apply(lambda val: 100 * val)
+    std_df = pretrain_df.groupby('dataset name').agg(np.std)
+    mean_df = pretrain_df.groupby('dataset name').agg(np.mean)
+    pretrain_df = pd.concat([pd.pivot_table(mean_df, values=["score"], columns=['dataset name']),
+                             pd.pivot_table(std_df, values=["score"], columns=['dataset name'])])
+    pretrain_df.index = ['mean', 'std']
+    pretrain_df = add_avg_and_sort_columns(pretrain_df)
+    print_table_to_html(pretrain_df, pretrain_scores_html_file_path)
+
+    models_df = pd.read_csv(roberta_absolute_scores_models_csv_path)
+    cols = models_df.select_dtypes(np.number).columns
+    models_df[cols] = models_df[cols].mul(100)
+    models_df = models_df.drop(columns=dropped_columns)
+
+    models_df = add_avg_and_sort_columns(models_df)
+    models_df = models_df.sort_values(by=['avg', 'mnli_lp'], ascending=[False, False])
+    models_df = models_df.reset_index(drop=True)
+
+    models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
+    models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
+    models_df.at[0, 'model_name'] = 'Pretrained Model'
+
+    print_table_to_html(models_df, roberta_absolute_scores_html_file_path)
