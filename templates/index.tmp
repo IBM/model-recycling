@@ -19,14 +19,7 @@ full finetuning over 36 target tasks.
 Currently: the best RoBERTa-base models are:
 <br>
 
-|    | model_name                                   |   avg |   mnli_lp |
-|---:|:---------------------------------------------|------:|----------:|
-|  0 | Pretrained Model                             | 76.22 |    nan    |
-|  1 | janeel/muppet-roberta-base-finetuned-squad   | 78.04 |     83.24 |
-|  2 | deepakvk/roberta-base-squad2-finetuned-squad | 76.89 |     61.13 |
-|  3 | Andranik/TestQaV1                            | 76.77 |     60.35 |
-|  4 | luffycodes/roberta-base-mrpc                 | 76.72 |     63.43 |
-|  5 | huxxx657/roberta-base-finetuned-squad        | 76.71 |     59.77 |
+$$ROBERTA_MODELS_SHORT$$
 
 <br>
 <br>

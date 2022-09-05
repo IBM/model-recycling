@@ -90,6 +90,9 @@ def calculate_template_dict():
     models_df.at[0, 'model_name'] = 'Pretrained Model'
     templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df, roberta_base_table_csv)
 
+    models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]
+    templates_dict['ROBERTA_MODELS_SHORT'] = df_to_md(models_df)
+
     #models_df = models_df[['model_name', 'avg', 'mnli_lp']]
     #print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
     return templates_dict
