@@ -12,6 +12,7 @@ slot_symbol = '$$'
 templates_dir_path = os.path.join(os.path.dirname(__file__), '..', './templates')
 root_dir_path = os.path.join(os.path.dirname(__file__), '..')
 
+roberta_base_table_csv = '../results/roberta_base_table.csv'
 roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
 roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
 
@@ -52,7 +53,9 @@ def add_avg_and_sort_columns(df):
     return df
 
 
-def df_to_md(df):
+def df_to_md(df, path_to_csv_file=None):
+    if path_to_csv_file:
+        df.to_csv(path_to_csv_file)
     return df.to_markdown(floatfmt='.2f')
 
 
@@ -85,7 +88,7 @@ def calculate_template_dict():
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = 'Pretrained Model'
-    templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df)
+    templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df, roberta_base_table_csv)
 
     #models_df = models_df[['model_name', 'avg', 'mnli_lp']]
     #print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
