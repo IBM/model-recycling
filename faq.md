@@ -39,7 +39,7 @@ We train a linear probing classification head for the MNLI on each candidate mod
 
 We use the following datasets:
 1. MNLI
-
+Full list will appear here shortly.
 
 ## I have another question.
 
