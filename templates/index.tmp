@@ -16,7 +16,7 @@ We rank finetuned models found in HuggingFace per architecture. We efficiently c
 full finetuning over 36 target tasks.
 
 
-Currently: the best RoBERTa-base models are:
+Currently: the best RoBERTa-base models are (model #0 is RoBETa base for reference):
 <br>
 
 $$ROBERTA_MODELS_SHORT$$
