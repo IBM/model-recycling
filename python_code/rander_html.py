@@ -1,13 +1,18 @@
+import os
+
 import numpy as np
 import pandas as pd
 import math
+import re
 import tabulate
 
-roberta_absolute_scores_html_file_path = '../roberta_absolute_scores_table.html'
-roberta_absolute_scores_avg_html_file_path = '../roberta_absolute_scores_avg_table.html'
-pretrain_scores_html_file_path = '../pretrain_scores_table.md'
+slot_symbol = '$$'
+templates_dir_path = os.path.join(os.path.dirname(__file__), '..', './templates')
+root_dir_path = os.path.join(os.path.dirname(__file__), '..')
+
 roberta_absolute_scores_models_csv_path = '../results/models_results_roberta_base.csv'
 roberta_pretrain_scores_csv_path = '../results/models_results_roberta_pretrain.csv'
+
 dropped_columns = ['base_model', 'size', 'tokenizer', 'model_type', 'classification', 'layers',
                    'from_flax', 'from_tf', 'last_modified']
 columns_to_avg = ['cola', 'mrpc', 'qqp', 'stsb', 'boolq', 'cb', 'copa', 'multirc', 'wic', 'wsc', 'ag_news', 'isear',
@@ -16,25 +21,22 @@ columns_to_avg = ['cola', 'mrpc', 'qqp', 'stsb', 'boolq', 'cb', 'copa', 'multirc
                   'tweet_ev_emoji', 'tweet_ev_emotion', 'tweet_ev_hate', 'tweet_ev_irony', 'tweet_ev_offensive',
                   'tweet_ev_sentiment', 'mnli', 'qnli', 'rte', 'wnli', 'esnli', 'anli']
 
-html_prefix = """<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-  <h1>Welcome to model-recycling page</h1>
-  <p>This page contains ranking of HF models.</p>
-  """
 
-html_suffix = """
-</body>
-</html>
-  """
-
-
-def print_table_to_html(df, html_file_path):
-    pd.options.display.float_format = '{:,.2f}'.format
-    with open(html_file_path, 'w') as f:
-        f.write(df.to_markdown(floatfmt='.2f'))
+def fill_templates(templates_dict):
+    pattern = re.compile(re.escape(slot_symbol) +'(\w+)'+re.escape(slot_symbol))
+    for root, dirs, filenames in os.walk(templates_dir_path):
+        for filename in filenames:
+            with open(os.path.join(root, filename)) as template_file:
+                relative_path = root.replace(templates_dir_path, '').lstrip(os.sep)
+                os.makedirs(os.path.join(root_dir_path, relative_path), exist_ok=True)
+                with open(os.path.join(root_dir_path, relative_path, filename), 'w') as md_file:
+                    for line in template_file:
+                        m = re.match(pattern, line)
+                        if m:
+                            md_file.write(line.replace(slot_symbol+m.group(1)+slot_symbol,
+                                                       templates_dict[m.group(1)]))
+                        else:
+                            md_file.write(line)
 
 
 def add_avg_and_sort_columns(df):
@@ -46,7 +48,12 @@ def add_avg_and_sort_columns(df):
     return df
 
 
-if __name__ == '__main__':
+def df_to_md(df):
+    return df.to_markdown(floatfmt='.2f')
+
+
+def calculate_template_dict():
+    templates_dict = {}
     pretrain_df = pd.read_csv(roberta_pretrain_scores_csv_path, sep='\t')
     pretrain_df['score'] = pretrain_df.apply(
         lambda row: row['accuracy'] if not math.isnan(row['accuracy']) else row['spearmanr'], axis=1)
@@ -60,7 +67,7 @@ if __name__ == '__main__':
     pretrain_df.index = ['mean', 'std']
     pretrain_df = add_avg_and_sort_columns(pretrain_df)
     pretrain_df.at['std', 'avg'] = avg_pretrain_df.std(axis=0)['score']
-    print_table_to_html(pretrain_df, pretrain_scores_html_file_path)
+    templates_dict['ROBERTA_BASE_PRETRAIN_TABLE'] = df_to_md(pretrain_df)
 
     models_df = pd.read_csv(roberta_absolute_scores_models_csv_path)
     cols = models_df.select_dtypes(np.number).columns
@@ -74,8 +81,17 @@ if __name__ == '__main__':
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = 'Pretrained Model'
+    templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df)
 
-    print_table_to_html(models_df, roberta_absolute_scores_html_file_path)
+    #models_df = models_df[['model_name', 'avg', 'mnli_lp']]
+    #print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
+    return templates_dict
 
-    models_df = models_df[['model_name', 'avg', 'mnli_lp']]
-    print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
+
+def main():
+    templates_dict = calculate_template_dict()
+    fill_templates(templates_dict)
+
+
+if __name__ == '__main__':
+    main()
