@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Finetune over pretrain scores 
+title: Pretrain
+parent: Rankings
 nav_order: 6
 ---
 
