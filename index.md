@@ -13,11 +13,12 @@ themselves.
 
 This site presents a dynamic view of the best models to choose, given that you chose the model's size and architecture.
 We rank finetuned models found in HuggingFace per architecture. We efficiently check each model and test the best by 
-full finetuning over 36 target tasks.</p>
+full finetuning over 36 target tasks.
 
 
 Currently: the best RoBERTa-base models are:
 </br>
+
 ROBERTA_MODELS_SHORT
 
 
