@@ -6,6 +6,8 @@ import math
 import re
 import tabulate
 
+template_file_extension = 'tmp'
+md_file_extension = 'md'
 slot_symbol = '$$'
 templates_dir_path = os.path.join(os.path.dirname(__file__), '..', './templates')
 root_dir_path = os.path.join(os.path.dirname(__file__), '..')
@@ -29,7 +31,9 @@ def fill_templates(templates_dict):
             with open(os.path.join(root, filename)) as template_file:
                 relative_path = root.replace(templates_dir_path, '').lstrip(os.sep)
                 os.makedirs(os.path.join(root_dir_path, relative_path), exist_ok=True)
-                with open(os.path.join(root_dir_path, relative_path, filename), 'w') as md_file:
+                with open(os.path.join(root_dir_path, relative_path,
+                                       filename.replace('.'+template_file_extension, '.'+md_file_extension)), 'w') \
+                        as md_file:
                     for line in template_file:
                         m = re.match(pattern, line)
                         if m:
