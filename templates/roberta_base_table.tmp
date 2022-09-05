@@ -1,0 +1,13 @@
+---
+layout: default
+title: Full ranking
+parent: Rankings
+---
+This page contains ranking of finetuned models, base on RoBERTa base architecture. The ranking was done by comparing the
+results of fintune only the classification head of the model (linear probing) over the MNLI dataset. The best models by
+this ranking ranked by the average accuracy after finetuning over the 36 datasets (except for the stsb dataset, where we
+ used the Spearman correlation instead of accuracy).
+<br>
+
+$$ROBERTA_BASE_TABLE$$
+
