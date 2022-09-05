@@ -35,6 +35,12 @@ We will update the results monthly.
 
 We train a linear probing classification head for the MNLI on each candidate model.  We take each of the top 5 ranking models, and we fine-tune them on the 36 classification tasks (Consisting of sentiment, NLI, Twitter, topic classification and other general classification tasks).   We compare to the baseline of the vanilla model which is also trained and assessed on 5 seeds.   We use the following hyperparameters:
 
+## Which datasets are used?
+
+We use the following datasets:
+1. MNLI
+
+
 ## I have another question.
 
 Please [contact us](contact_us.md)
