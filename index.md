@@ -20,14 +20,14 @@ This site presents a dynamic view of the best models to choose for a given model
 Currently: the best RoBERTa-base models are (model #0 is RoBERTa base for reference):
 <br>
 
-|          | model_name                                   |   avg |   mnli_lp |
-|:---------|:---------------------------------------------|------:|----------:|
-| baseline | roberta-base                                 | 76.22 |    nan    |
-| 1        | janeel/muppet-roberta-base-finetuned-squad   | 78.04 |     83.24 |
-| 2        | deepakvk/roberta-base-squad2-finetuned-squad | 76.89 |     61.13 |
-| 3        | Andranik/TestQaV1                            | 76.77 |     60.35 |
-| 4        | luffycodes/roberta-base-mrpc                 | 76.72 |     63.43 |
-| 5        | huxxx657/roberta-base-finetuned-squad        | 76.71 |     59.77 |
+|          | model_name                                       | avg       | mnli_lp   |
+|:---------|:-------------------------------------------------|:----------|:----------|
+| baseline | roberta-base                                     | 76.22     | nan       |
+| **1**    | **janeel/muppet-roberta-base-finetuned-squad**   | **78.04** | **83.24** |
+| **2**    | **deepakvk/roberta-base-squad2-finetuned-squad** | **76.89** | **61.13** |
+| **3**    | **Andranik/TestQaV1**                            | **76.77** | **60.35** |
+| **4**    | **luffycodes/roberta-base-mrpc**                 | **76.72** | **63.43** |
+| **5**    | **huxxx657/roberta-base-finetuned-squad**        | **76.71** | **59.77** |
 
 <br>
 <br>
