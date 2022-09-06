@@ -91,6 +91,7 @@ def calculate_template_dict():
     templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df, roberta_base_table_csv)
 
     models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]
+    models_df.index = (['baseline'] + list(range(1, len(models_df))))
     templates_dict['ROBERTA_MODELS_SHORT'] = df_to_md(models_df)
 
     #models_df = models_df[['model_name', 'avg', 'mnli_lp']]
