@@ -89,16 +89,24 @@ def calculate_template_dict():
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = 'roberta-base'
     templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df, roberta_base_table_csv)
+    models_base_table_df = bold_non_baseline_rows(models_df.copy()[:11])
+    templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_base_table_df)
+
 
     models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]
-    models_df[1:] = models_df[1:].applymap(lambda x: f'**{x:.2f}**' if isinstance(x, float) else f'**{x}**')
-    models_df[:1] = models_df[:1].applymap(lambda x: f'{x:.2f}' if isinstance(x, float) else f'{x}')
-    models_df.index = ['baseline'] + ['**'+str(i)+'**' for i in range(1, len(models_df))]
+    models_df = bold_non_baseline_rows(models_df)
     templates_dict['ROBERTA_MODELS_SHORT'] = df_to_md(models_df)
 
     #models_df = models_df[['model_name', 'avg', 'mnli_lp']]
     #print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
     return templates_dict
+
+
+def bold_non_baseline_rows(models_df):
+    models_df[1:] = models_df[1:].applymap(lambda x: f'**{x:.2f}**' if isinstance(x, float) else f'**{x}**')
+    models_df[:1] = models_df[:1].applymap(lambda x: f'{x:.2f}' if isinstance(x, float) else f'{x}')
+    models_df.index = ['baseline'] + ['**' + str(i) + '**' for i in range(1, len(models_df))]
+    return models_df
 
 
 def main():
