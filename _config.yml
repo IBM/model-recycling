@@ -1,5 +1,5 @@
 markdown: kramdown
-remote_theme: just-the-docs/just-the-docs
+remote_theme: borgr/just-the-docs
 aux_links:
   "Model Recycling on GitHub":
     - "//github.com/IBM/model-recycling"
@@ -10,5 +10,5 @@ aux_links_new_tab: false
 back_to_top: true
 back_to_top_text: "Back to top"
 
-logo: recybert.png
-color_scheme: recybert
+logo: "/recybert.png"
+color_scheme: "recybert"
