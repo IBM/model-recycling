@@ -87,7 +87,7 @@ def calculate_template_dict():
 
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
-    models_df.at[0, 'model_name'] = 'Pretrained Model'
+    models_df.at[0, 'model_name'] = 'roberta-base'
     templates_dict['ROBERTA_BASE_TABLE'] = df_to_md(models_df, roberta_base_table_csv)
 
     models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]

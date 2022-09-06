@@ -11,11 +11,14 @@ It improves results significantly in most cases, and in average. The best base R
 
 ## Can I get worse results from training over the top ranked base model when compared to the vanilla model?
 
-Yes. For example, in RoBERTa-base, about 1 in 4 tasks perform slightly better on the pretrained model. Furthermore, difference in seed randomization can yield variance in results. The best approach is to assess multiple models and evaluate on dev data. You can see example HuggingFace code that streamline this process.
+Yes. For example, in RoBERTa-base, about 1 in 4 tasks perform slightly better on the pretrained model. Furthermore, difference in seed randomization can yield variance in results. The best approach is to assess multiple models and evaluate on dev data. 
 
 ## When shouldn't I use one of the recommended base models?
 
-You should always review the base model license and fact sheet to ensure they meet your requirement for the particular use case.
+You should always review the base model license and fact sheet to ensure they meet your requirement for the particular 
+use case. you should always only  download models and datasets from sources that you trust.  Downloading of models and 
+datasets can run code your machine (see for example [HuggingFace](https://huggingface.co/docs/transformers/autoclass_tutorial) warning). 
+We do not certify the quality and usability of  models listed.
 
 ## Which architectures are supported?
 
@@ -33,7 +36,7 @@ We will update the results monthly.
 
 ## How do you assess the models?
 
-We train a linear probing classification head for the MNLI on each candidate model.  We take each of the top 5 ranking models, and we fine-tune them on the 36 classification tasks (Consisting of sentiment, NLI, Twitter, topic classification and other general classification tasks).   We compare to the baseline of the vanilla model which is also trained and assessed on 5 seeds.   We use the following hyperparameters:
+We train a linear probing classification head for the MNLI on each candidate model.  We take each of the top 5 ranking models, and we fine-tune them on the 36 classification tasks (Consisting of sentiment, NLI, Twitter, topic classification and other general classification tasks).   We compare to the baseline of the vanilla model which is also trained and assessed on 5 seeds.
 
 ## Which datasets are used?
 

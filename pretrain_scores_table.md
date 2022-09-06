@@ -3,8 +3,8 @@ layout: default
 title: Baseline
 parent: Rankings
 ---
-This page contains the base line scores for finetuning RoBERTa base pretrain model over the 36 tasks,
-ran over 20 random initializations.
+This page contains the baseline scores of finetuning RoBERTa base pretrained model over the 36 tasks,
+aggregated over runs of 20 random initializations.
 <br>
 
 |      |   avg |   20_newsgroup |   ag_news |   amazon_reviews_multi |   anli |   boolq |    cb |   cola |   copa |   dbpedia |   esnli |   financial_phrasebank |   imdb |   isear |   mnli |   mrpc |   multirc |   poem_sentiment |   qnli |   qqp |   rotten_tomatoes |   rte |   sst2 |   sst_5bins |   stsb |   trec_coarse |   trec_fine |   tweet_ev_emoji |   tweet_ev_emotion |   tweet_ev_hate |   tweet_ev_irony |   tweet_ev_offensive |   tweet_ev_sentiment |   wic |   wnli |   wsc |   yahoo_answers |

@@ -11,12 +11,13 @@ Hardly anyone trains from scratch anymore, we all finetune over a pretrained mod
 Research slowly reaches consensus that some finetuned models are better base models than the pretrained models 
 themselves.
 
-This site presents a dynamic view of the best models to choose, given that you chose the model's size and architecture.
-We rank finetuned models found in HuggingFace per architecture. We efficiently check each model and test the best by 
-full finetuning over 36 target tasks.
+This site presents a dynamic view of the best models to choose for a given model size and architecture. We download
+ finetuned models found in HuggingFace per architecture and efficiently ranked them over a representative task.
+ We then evaluated the top ranked models by finetuning over a large set 36 target tasks, and report the average
+ performance of each base model.
 
 
-Currently: the best RoBERTa-base models are (model #0 is RoBETa base for reference):
+Currently: the best RoBERTa-base models are (model #0 is RoBERTa base for reference):
 <br>
 
 $$ROBERTA_MODELS_SHORT$$
@@ -24,5 +25,8 @@ $$ROBERTA_MODELS_SHORT$$
 <br>
 <br>
 
-You can get the full models ranking [here](Rankings.md).
+You can see the full model ranking [here](roberta_base_table.md).
+<br>
 The baseline of finetune the task on RoBERTa base pretrain model can be found [here](pretrain_scores_table.md).
+
+This  work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
