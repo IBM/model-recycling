@@ -37,6 +37,23 @@ We will update the results monthly.
 ## How do you assess the models?
 
 We train a linear probing classification head for the MNLI on each candidate model.  We take each of the top 5 ranking models, and we fine-tune them on the 36 classification tasks (Consisting of sentiment, NLI, Twitter, topic classification and other general classification tasks).   We compare to the baseline of the vanilla model which is also trained and assessed on 5 seeds.
+We use the following hyperparameters:
+>model name: roberta-base,
+tokenizer: roberta-base,
+train size: inf,
+val size: inf,
+test size: inf,
+epochs: 10,
+learning rate: 5e-5,linear,0.0006,
+early stop epsilon: 0.001,
+batch size: 256,
+patience: 20 * 50 * 256,
+validate every: 50 * 256,
+seed: 0,
+l2 reg: 0.0,
+classification model: ,
+optimizer: adamw,
+weight decay: 0.01
 
 ## Which datasets are used?
 
