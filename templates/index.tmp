@@ -17,7 +17,7 @@ This site presents a dynamic view of the best models to choose for a given model
  performance of each base model.
 
 
-Currently: the best RoBERTa-base models are (model #0 is RoBERTa base for reference):
+Currently: the best RoBERTa-base models are (baseline is RoBERTa base):
 <br>
 
 $$ROBERTA_MODELS_SHORT$$
@@ -25,8 +25,9 @@ $$ROBERTA_MODELS_SHORT$$
 <br>
 <br>
 
-You can see the full model ranking [here](roberta_base_table.md).
-<br>
-The baseline of finetune the task on RoBERTa base pretrain model can be found [here](pretrain_scores_table.md).
 
-This  work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
+Some tasks gain a lot and others hardly change, you can see the full model ranking [here](roberta_base_table.md).
+<br>
+Changes of more than 0.36 (the [STD](Roberta-base-Baseline)) are considered significant. It is reported with the baseline performance -- finetuning pretrained RoBERTa base [here](pretrain_scores_table.md).
+
+This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
