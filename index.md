@@ -17,23 +17,24 @@ This site presents a dynamic view of the best models to choose for a given model
  performance of each base model.
 
 
-Currently: the best RoBERTa-base models are (model #0 is RoBERTa base for reference):
+Currently: the best RoBERTa-base models are (baseline is RoBERTa base):
 <br>
 
-|          | model_name                                       | avg       | mnli_lp   |
-|:---------|:-------------------------------------------------|:----------|:----------|
-| baseline | roberta-base                                     | 76.22     | nan       |
-| **1**    | **janeel/muppet-roberta-base-finetuned-squad**   | **78.04** | **83.24** |
-| **2**    | **deepakvk/roberta-base-squad2-finetuned-squad** | **76.89** | **61.13** |
-| **3**    | **Andranik/TestQaV1**                            | **76.77** | **60.35** |
-| **4**    | **luffycodes/roberta-base-mrpc**                 | **76.72** | **63.43** |
-| **5**    | **huxxx657/roberta-base-finetuned-squad**        | **76.71** | **59.77** |
+|            | model_name                                   | avg     | mnli_lp   |
+|:-----------|:---------------------------------------------|:--------|:----------|
+| *baseline* | *roberta-base*                               | *76.22* | *nan*     |
+| 1          | janeel/muppet-roberta-base-finetuned-squad   | 78.04   | 83.24     |
+| 2          | deepakvk/roberta-base-squad2-finetuned-squad | 76.89   | 61.13     |
+| 3          | Andranik/TestQaV1                            | 76.77   | 60.35     |
+| 4          | luffycodes/roberta-base-mrpc                 | 76.72   | 63.43     |
+| 5          | huxxx657/roberta-base-finetuned-squad        | 76.71   | 59.77     |
 
 <br>
 <br>
 
-You can see the full model ranking [here](roberta_base_table.md).
+
+Some tasks gain a lot and others hardly change, you can see the full model ranking [here](roberta_base_table.md).
 <br>
-The baseline of finetune the task on RoBERTa base pretrain model can be found [here](pretrain_scores_table.md).
+Changes of more than 0.36 (the [STD](Roberta-base-Baseline)) are considered significant. It is reported with the baseline performance -- finetuning pretrained RoBERTa base [here](pretrain_scores_table.md).
 
 This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.

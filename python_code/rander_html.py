@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import math
 import re
-import tabulate
+# import tabulate
 
 template_file_extension = 'tmp'
 md_file_extension = 'md'
