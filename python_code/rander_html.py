@@ -103,9 +103,9 @@ def calculate_template_dict():
 
 
 def bold_non_baseline_rows(models_df):
-    models_df[1:] = models_df[1:].applymap(lambda x: f'**{x:.2f}**' if isinstance(x, float) else f'**{x}**')
-    models_df[:1] = models_df[:1].applymap(lambda x: f'{x:.2f}' if isinstance(x, float) else f'{x}')
-    models_df.index = ['baseline'] + ['**' + str(i) + '**' for i in range(1, len(models_df))]
+    models_df[1:] = models_df[1:].applymap(lambda x: f'{x:.2f}' if isinstance(x, float) else f'{x}')
+    models_df[:1] = models_df[:1].applymap(lambda x: f'*{x:.2f}*' if isinstance(x, float) else f'*{x}*')
+    models_df.index = ['*baseline*'] + ['' + str(i) + '' for i in range(1, len(models_df))]
     return models_df
 
 
