@@ -36,4 +36,4 @@ You can see the full model ranking [here](roberta_base_table.md).
 <br>
 The baseline of finetune the task on RoBERTa base pretrain model can be found [here](pretrain_scores_table.md).
 
-This  work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
+This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
