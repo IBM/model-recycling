@@ -58,8 +58,43 @@ weight decay: 0.01
 ## Which datasets are used?
 
 We use the following datasets:
-1. MNLI
-Full list will appear here shortly.
+1. Entailments: [MNLI](https://cims.nyu.edu/~sbowman/multinli/), [ESNLI](https://papers.nips.cc/paper/8163-e-snli-natural-language-inference-with-natural-language-explanations), [QNLI](https://rajpurkar.github.io/SQuAD-explorer/), [QQP](https://www.quora.com/q/quoradata/First-Quora-Dataset-Release-Question-Pairs), [RTE](https://aclweb.org/anthology/W14-3110), [WNLI](https://cs.nyu.edu/faculty/davise/papers/WinogradSchemas/WS.html), [ANLI](https://aclanthology.org/2020.acl-main.441/) 
+2. Sentiment:[SST-2](https://nlp.stanford.edu/sentiment/index.html)
+[SST-5](https://paperswithcode.com/dataset/sst),
+[POEM SENTIMENT](https://arxiv.org/abs/2011.02686),
+[IMDB](https://ai.stanford.edu/~amaas/data/sentiment/),
+[Rotten Tomatoes](https://aclanthology.org/P05-1015),
+[Amazon reviews](https://jmcauley.ucsd.edu/data/amazon/),
+[Financial phrasebank](https://arxiv.org/abs/1307.5336)
+3. Topic Classification:
+[AG NEWS](https://pathmind.com/wiki/),
+[ISEAR](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/),
+[Yahoo answers](https://pathmind.com/wiki/),
+[DBpedia](https://pathmind.com/wiki/),
+[20 NEWSGROUP](https://pathmind.com/wiki/),
+[TREC fine](https://www.aclweb.org/anthology/C02-1150),
+[TREC coarse](https://www.aclweb.org/anthology/H01-1069)
+4. Twitter:
+[Tweet Emoji](https://aclanthology.org/S18-1003),
+[Tweet Emotion](https://aclanthology.org/S18-1001/),
+[Tweet Hate](https://aclanthology.org/S19-2007/),
+[Tweet Irony](https://aclanthology.org/S18-1005),
+[Tweet Offensive](https://aclanthology.org/S19-2010/),
+[Tweet Sentiment](https://aclanthology.org/S17-2088)
+
+5. Others:
+[CoLA](https://nyu-mll.github.io/CoLA/),
+[STS-B](http://www.aclweb.org/anthology/S/S17/S17-2001),
+[QQP](https://quoradata.quora.com/First-Quora-Dataset-Release-Question-Pairs),
+[QNLI](https://aclanthology.org/W18-5446/),
+[RTE](https://aclweb.org/aclwiki/Recognizing_Textual_Entailment),
+[WNLI](https://aclanthology.org/W18-5446/),
+[MRPC](https://aclanthology.org/I05-5002),
+[BoolQ](https://aclanthology.org/N19-1300/),
+[CB](https://paperswithcode.com/dataset/ml-cb),
+[COPA](https://paperswithcode.com/dataset/copa),
+[WIC](https://aclanthology.org/N19-1128/),
+[WSC](https://paperswithcode.com/dataset/wsc)
 
 ## I have another question.
 
