@@ -60,18 +60,18 @@ weight decay: 0.01
 We use the following datasets:
 1. Entailments: [MNLI](https://cims.nyu.edu/~sbowman/multinli/), [ESNLI](https://papers.nips.cc/paper/8163-e-snli-natural-language-inference-with-natural-language-explanations), [QNLI](https://rajpurkar.github.io/SQuAD-explorer/), [QQP](https://www.quora.com/q/quoradata/First-Quora-Dataset-Release-Question-Pairs), [RTE](https://aclweb.org/anthology/W14-3110), [WNLI](https://cs.nyu.edu/faculty/davise/papers/WinogradSchemas/WS.html), [ANLI](https://aclanthology.org/2020.acl-main.441/) 
 2. Sentiment:[SST-2](https://nlp.stanford.edu/sentiment/index.html)
-[SST-5](https://paperswithcode.com/dataset/sst),
+[SST-5](https://nlp.stanford.edu/sentiment/index.html),
 [POEM SENTIMENT](https://arxiv.org/abs/2011.02686),
 [IMDB](https://ai.stanford.edu/~amaas/data/sentiment/),
 [Rotten Tomatoes](https://aclanthology.org/P05-1015),
 [Amazon reviews](https://jmcauley.ucsd.edu/data/amazon/),
 [Financial phrasebank](https://arxiv.org/abs/1307.5336)
 3. Topic Classification:
-[AG NEWS](https://pathmind.com/wiki/),
+[AG NEWS](http://groups.di.unipi.it/~gulli/AG_corpus_of_news_articles.html),
 [ISEAR](https://www.unige.ch/cisa/research/materials-and-online-research/research-material/),
-[Yahoo answers](https://pathmind.com/wiki/),
-[DBpedia](https://pathmind.com/wiki/),
-[20 NEWSGROUP](https://pathmind.com/wiki/),
+[Yahoo answers](https://proceedings.neurips.cc/paper/2015/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf),
+[DBpedia](https://proceedings.neurips.cc/paper/2015/file/250cf8b51c773f3f8dc8b4be867a9a02-Paper.pdf),
+[20 NEWSGROUP](http://qwone.com/~jason/20Newsgroups/),
 [TREC fine](https://www.aclweb.org/anthology/C02-1150),
 [TREC coarse](https://www.aclweb.org/anthology/H01-1069)
 4. Twitter:
