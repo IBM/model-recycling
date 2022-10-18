@@ -12,13 +12,14 @@ back_to_top_text: "Back to top"
 
 logo: "/recybert.png"
 color_scheme: "recybert"
-
+title: "Model-recycling - the best model per architecture"
 description: Hardly anyone trains from scratch anymore, we all finetune over a pretrained model.
 Some finetuned models are better base models than the pretrained models themselves.
 This site presents a dynamic view of the best models to choose for a given model size and architecture.
-
+image: "https://raw.githubusercontent.com/IBM/model-recycling/master/Twitter_card.png"
 plugins:
 - jekyll-seo-tag
 
 twitter:
+  username: LChoshen
   card: summary_large_image
