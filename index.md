@@ -1,5 +1,7 @@
 ---
 layout: default
+banner_image: "/Twitter_card.png"
+image: "/Twitter_card.png"
 title: Home
 nav_order: 0
 
