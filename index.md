@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 0
-image: "/../Twitter_card.png"
+image: "Twitter_card.png"
 description: "Model-recycling - the best model per architecture"
 # description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
 ---
