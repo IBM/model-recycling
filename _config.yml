@@ -19,9 +19,10 @@ logo: "/recybert.png"
 color_scheme: "recybert"
 
 tagline: "Just pick which model to finetune"
-title: "Model-recycling - the best model per architecture"
+# title: "Model-recycling - the best model per architecture"
 image: "Twitter_card.png"
-description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
+description: "Model-recycling - the best model per architecture"
+# description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
 author: LChoshen
 twitter:
   username: LChoshen
