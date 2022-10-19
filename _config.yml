@@ -20,7 +20,7 @@ color_scheme: "recybert"
 
 tagline: "Just pick which model to finetune"
 title: "Model-recycling - the best model per architecture"
-image: "/../Twitter_card.png"
+image: "//ibm.github.io/model-recycling/Twitter_card.png"
 description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
 author: LChoshen
 twitter:
