@@ -1,5 +1,5 @@
 plugins:
-- jekyll-seo-tag
+  - jekyll-seo-tag
 
 markdown: kramdown
 remote_theme: borgr/just-the-docs
