@@ -3,6 +3,8 @@ layout: default
 image: "/../Twitter_card.png"
 title: Home
 nav_order: 0
+image: "Twitter_card.png"
+description: "Model-recycling - the best model per architecture"
 
 ---
 # Welcome to model-recycling page
