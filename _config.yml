@@ -9,7 +9,7 @@ aux_links:
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
-url: "https://ibm.github.io/model-recycling/"
+url: "https://ibm.github.io/model-recycling"
 
 # Footer - "Back to top" link
 back_to_top: true
