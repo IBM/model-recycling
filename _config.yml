@@ -20,8 +20,8 @@ color_scheme: "recybert"
 
 tagline: "Just pick which model to finetune"
 title: "Model-recycling - the best model per architecture"
-description: "Hardly anyone trains from scratch anymore, we all finetune over a pretrained model. Some finetuned models are better base models than the pretrained models themselves. This site presents a dynamic view of the best models to choose for a given model size and architecture."
 image: "/Twitter_card.png"
+description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
 author: LChoshen
 twitter:
   username: LChoshen
