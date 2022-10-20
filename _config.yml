@@ -17,12 +17,17 @@ back_to_top_text: "Back to top"
 
 logo: "/recybert.png"
 color_scheme: "recybert"
-
+title: "Model Recycling"
 tagline: "Just pick which model to finetune"
 author:
   name: Leshem Choshen
   twitter: LChoshen
-  image: "Twitter_card.png"
+  image: "/Twitter_card.png"
 twitter:
   username: LChoshen
   card: summary_large_image
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/Twitter_card.png"
