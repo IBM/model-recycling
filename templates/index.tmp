@@ -2,6 +2,8 @@
 layout: default
 title: Home
 nav_order: 0
+image: "Twitter_card.png"
+description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetune on texts. "
 
 ---
 # Welcome to model-recycling page
@@ -17,10 +19,10 @@ This site presents a dynamic view of the best models to choose for a given model
  performance of each base model.
 
 
-Currently: the best RoBERTa-base models are (baseline is RoBERTa base):
+Currently: the best models per architectures are:
 <br>
 
-$$ROBERTA_MODELS_SHORT$$
+$$BEST_PER_MODEL$$
 
 <br>
 <br>
