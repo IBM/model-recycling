@@ -123,7 +123,17 @@ def calculate_model_template(model_name):
     templates_dict[f'{to_template_name(model_name)}_PRETRAIN_TABLE'] = df_to_md(pretrain_df)
 
     models_df = pd.read_csv(get_absolute_scores_models_csv_path())
+
     models_df = models_df[models_df["base_model"] == model_name]
+    rows_with_nans = models_df[models_df.apply(
+        lambda row: not (not row.loc['mnli_lp':].iloc[1:].hasnans or row.loc['mnli_lp':].iloc[1:].isna().values.all()),
+        axis=1)]
+    if not rows_with_nans.empty:
+        print(f'Warning: df contains models with nan values: {rows_with_nans}')
+    models_df = models_df[models_df.apply(
+        lambda row: not row.loc['mnli_lp':].iloc[1:].hasnans or row.loc['mnli_lp':].iloc[1:].isna().values.all(),
+        axis=1)]
+
     cols = models_df.select_dtypes(np.number).columns
     models_df[cols] = models_df[cols].mul(100)
     models_df = models_df.drop(columns=dropped_columns)

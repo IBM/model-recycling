@@ -22,13 +22,13 @@ This site presents a dynamic view of the best models to choose for a given model
 Currently: the best models per architectures are:
 <br>
 
-| Pretrained          | Best model                                  |   Avg. |   Pretrained Avg. |
-|:--------------------|:--------------------------------------------|-------:|------------------:|
-| roberta-base        | mwong/roberta-base-climate-evidence-related |  79.22 |             76.22 |
-| bert-base-uncased   | dingkun/retrievalv2                         |  72.33 |             76.22 |
-| google/t5-v1_1-base | ClueAI/PromptCLUE                           | nan    |             76.22 |
-| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate   |  74.07 |             76.22 |
-| t5-base             | Muzzi/t5-base-finetuned-eli5                |  76.08 |             76.22 |
+| Pretrained          | Best model                                 |   Avg. |   Pretrained Avg. |
+|:--------------------|:-------------------------------------------|-------:|------------------:|
+| roberta-base        | janeel/muppet-roberta-base-finetuned-squad |  78.04 |             76.22 |
+| bert-base-uncased   | dingkun/retrievalv2                        |  72.33 |             76.22 |
+| google/t5-v1_1-base | ClueAI/PromptCLUE                          | nan    |             76.22 |
+| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate  |  74.07 |             76.22 |
+| t5-base             | helliun/conversational-qgen                | nan    |             76.22 |
 
 <br>
 <br>
