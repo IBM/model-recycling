@@ -55,6 +55,8 @@ def fill_templates(templates_dict):
                     actual_templates_dict = templates_dict.copy()
                     actual_templates_dict[m.group(1)] = resolve
                     fill_file_content_by_template(root, filename, solved_filename, actual_templates_dict)
+            else:
+                fill_file_content_by_template(root, filename, filename, templates_dict)
 
 
 def fill_file_content_by_template(root, filename, solved_filename, templates_dict):
