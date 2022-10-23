@@ -1,0 +1,5 @@
+,model_name,avg,mnli_lp,20_newsgroup,ag_news,amazon_reviews_multi,anli,boolq,cb,cola,copa,dbpedia,esnli,financial_phrasebank,imdb,isear,mnli,mrpc,multirc,poem_sentiment,qnli,qqp,rotten_tomatoes,rte,sst2,sst_5bins,stsb,trec_coarse,trec_fine,tweet_ev_emoji,tweet_ev_emotion,tweet_ev_hate,tweet_ev_irony,tweet_ev_offensive,tweet_ev_sentiment,wic,wnli,wsc,yahoo_answers
+0,google/t5-v1_1-base,76.22441074309977,,85.28146574614976,89.76833333333335,66.579,50.346875,78.69418960244647,67.76785714285714,83.53307766059444,48.7,77.295,90.99348534201954,85.11,93.9004,72.47066492829205,86.98179414157852,87.86764705882352,61.21596534653465,83.9423076923077,92.40801757276222,90.71357902547614,88.42401500938087,72.40072202166064,94.11697247706421,56.67647058823529,89.91713384298632,97.11,87.76,46.304500000000004,81.82266009852216,52.8939393939394,71.5625,84.55232558139535,71.03020188863562,65.47805642633229,54.78873239436619,63.26923076923076,72.40166666666667
+1,ClueAI/PromptCLUE,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2,binxu/mengzi-t5-base-finetuned-punctuation,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3,ClueAI/PromptCLUE-base,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

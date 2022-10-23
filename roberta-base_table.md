@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Roberta-base
+title: roberta-base
 parent: Rankings
 has_children: true
 ---
-[comment]: # (This page contains a link to a table with the ranking and performance of all ranked RoBERTa-base models. In addition, it contains a table with the baseline and the 10 best models. The original ranking was done by finetuning only the classification head of the model (linear probing) over the MNLI dataset.  The best models  by this ranking where ranked by the average accuracy after finetuning over the 36 datasets (except for the stsb dataset, where we used the Spearman correlation instead of accuracy).)
+[comment]: # (This page contains a link to a table with the ranking and performance of all ranked roberta-base models. In addition, it contains a table with the baseline and the 10 best models. The original ranking was done by finetuning only the classification head of the model (linear probing) over the MNLI dataset.  The best models  by this ranking where ranked by the average accuracy after finetuning over the 36 datasets (except for the stsb dataset, where we used the Spearman correlation instead of accuracy).)
 
-Ranking and performance of all ranked RoBERTa-base models ([full table](./results/roberta_base_table.csv)).
+Ranking and performance of all ranked roberta-base models ([full table](./results/roberta-base_table.csv)).
 
 Notes:
-1. Changes of more than 0.36 above the [STD](Roberta-base-Baseline) are considered significant
+1. Changes of more than 0.36 above the [STD](roberta-base-Baseline) are considered significant
 1. While the average improvement is small, many datasets show large gains.
 1. Muppet based model trained on many of the datasets, and may hence show
 <br>
@@ -32,4 +32,4 @@ Notes:
 
 <br>
 <br>
-Download full models ranking table: [csv](./results/roberta_base_table.csv)
+Download full models ranking table: [csv](./results/roberta-base_table.csv)

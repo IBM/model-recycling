@@ -12,7 +12,6 @@ md_file_extension = 'md'
 slot_symbol = '$$'
 templates_dir_path = os.path.join(os.path.dirname(__file__), '..', './templates')
 root_dir_path = os.path.join(os.path.dirname(__file__), '..')
-base_models = ['roberta-base', 't5-base']
 
 dropped_columns = ['base_model', 'size', 'tokenizer', 'model_type', 'classification', 'layers',
                    'from_flax', 'from_tf', 'last_modified']
@@ -22,18 +21,20 @@ columns_to_avg = ['cola', 'mrpc', 'qqp', 'stsb', 'boolq', 'cb', 'copa', 'multirc
                   'tweet_ev_emoji', 'tweet_ev_emotion', 'tweet_ev_hate', 'tweet_ev_irony', 'tweet_ev_offensive',
                   'tweet_ev_sentiment', 'mnli', 'qnli', 'rte', 'wnli', 'esnli', 'anli']
 
+REPLACE_TEMPLATE_PATTERN = re.compile(f'(?={re.escape(slot_symbol)}([^$\s]+){re.escape(slot_symbol)})',
+                                      flags=re.IGNORECASE)
+
 
 def regularize_model_name(model_name):
     return model_name.replace('-', '_')
 
 
 def get_base_table_path(model_name):
-    return os.path.join(os.path.dirname(__file__), '..', 'results', f'{regularize_model_name(model_name)}_table.csv')
+    return os.path.join(os.path.dirname(__file__), '..', 'results',
+                        f'{regularize_model_name(escape_files_name(model_name))}_table.csv')
 
 
-def get_absolute_scores_models_csv_path(model_name):
-    # return os.path.join(os.path.dirname(__file__), '..', 'results',
-    #                     f'models_results_{regularize_model_name(model_name)}.csv')
+def get_absolute_scores_models_csv_path():
     return os.path.join(os.path.dirname(__file__), '..', 'results', "models_tested.csv")
 
 
@@ -43,22 +44,39 @@ def get_pretrain_scores_csv_path(model_name):
 
 
 def fill_templates(templates_dict):
-    pattern = re.compile(re.escape(slot_symbol) + '(\w+)' + re.escape(slot_symbol))
     for root, dirs, filenames in os.walk(templates_dir_path):
         for filename in filenames:
-            with open(os.path.join(root, filename)) as template_file:
-                relative_path = root.replace(templates_dir_path, '').lstrip(os.sep)
-                os.makedirs(os.path.join(root_dir_path, relative_path), exist_ok=True)
-                with open(os.path.join(root_dir_path, relative_path,
-                                       filename.replace('.' + template_file_extension, '.' + md_file_extension)), 'w') \
-                        as md_file:
-                    for line in template_file:
-                        m = re.match(pattern, line)
-                        if m:
-                            md_file.write(line.replace(slot_symbol + m.group(1) + slot_symbol,
-                                                       templates_dict[m.group(1)]))
-                        else:
-                            md_file.write(line)
+            m = re.search(REPLACE_TEMPLATE_PATTERN, filename)
+            if m:  # the filename contains a template.
+                resolving_list = templates_dict[m.group(1)]
+                for resolve in resolving_list:
+                    resolve = escape_files_name(resolve)
+                    solved_filename = filename.replace(slot_symbol + m.group(1) + slot_symbol, resolve)
+                    actual_templates_dict = templates_dict.copy()
+                    actual_templates_dict[m.group(1)] = resolve
+                    fill_file_content_by_template(root, filename, solved_filename, actual_templates_dict)
+
+
+def fill_file_content_by_template(root, filename, solved_filename, templates_dict):
+    with open(os.path.join(root, filename)) as template_file:
+        relative_path = root.replace(templates_dir_path, '').lstrip(os.sep)
+        os.makedirs(os.path.join(root_dir_path, relative_path), exist_ok=True)
+        with open(os.path.join(root_dir_path, relative_path,
+                               solved_filename.replace('.' + template_file_extension, '.' + md_file_extension)), 'w') \
+                as md_file:
+            for line in template_file:
+                while True:
+                    ms = re.findall(REPLACE_TEMPLATE_PATTERN, line)
+                    if not ms:
+                        break
+                    for m in ms:
+                        if to_template_name(m) in templates_dict:
+                            line = line.replace(slot_symbol + m + slot_symbol, templates_dict[to_template_name(m)])
+                            break
+                    else:
+                        raise RuntimeError(
+                            f'Failed to find resolvable pattern in line. Available keys: {list(templates_dict.keys())}.\n\n line: {line}.')
+                md_file.write(line)
 
 
 def add_avg_and_sort_columns(df):
@@ -76,10 +94,18 @@ def df_to_md(df, path_to_csv_file=None):
     return df.to_markdown(floatfmt='.2f')
 
 
+def escape_files_name(st):
+    return st.replace('/', '_')
+
+
+def to_template_name(st):
+    return regularize_model_name(escape_files_name(st).upper())
+
+
 def calculate_model_template(model_name):
     reg_model_name = regularize_model_name(model_name)
     templates_dict = {}
-    pretrain_df = pd.read_csv(get_pretrain_scores_csv_path(reg_model_name), sep='\t', index_col=0)
+    pretrain_df = pd.read_csv(get_pretrain_scores_csv_path(escape_files_name(reg_model_name)), sep='\t', index_col=0)
     pretrain_df['score'] = pretrain_df.apply(
         lambda row: row['accuracy'] if not math.isnan(row['accuracy']) else row['spearmanr'], axis=1)
     pretrain_df['score'] = pretrain_df['score'].apply(lambda val: 100 * val)
@@ -92,9 +118,9 @@ def calculate_model_template(model_name):
     pretrain_df.index = ['mean', 'std']
     pretrain_df = add_avg_and_sort_columns(pretrain_df)
     pretrain_df.at['std', 'avg'] = avg_pretrain_df.std(axis=0)['score']
-    templates_dict[f'{reg_model_name.upper()}_PRETRAIN_TABLE'] = df_to_md(pretrain_df)
+    templates_dict[f'{to_template_name(model_name)}_PRETRAIN_TABLE'] = df_to_md(pretrain_df)
 
-    models_df = pd.read_csv(get_absolute_scores_models_csv_path(reg_model_name))
+    models_df = pd.read_csv(get_absolute_scores_models_csv_path())
     models_df = models_df[models_df["base_model"] == model_name]
     cols = models_df.select_dtypes(np.number).columns
     models_df[cols] = models_df[cols].mul(100)
@@ -105,18 +131,20 @@ def calculate_model_template(model_name):
     models_df = models_df.reset_index(drop=True)
 
     # TODO If a model has nans, only report its LP score
+    # TODO. if lp score is 0.0 remove from results.
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
-    templates_dict[f'{reg_model_name.upper()}_TABLE'] = df_to_md(models_df, get_base_table_path(reg_model_name))
+    templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_df,
+                                                                           get_base_table_path(reg_model_name))
     models_base_table_df = bold_non_baseline_rows(models_df.copy()[:11])
-    templates_dict[f'{reg_model_name.upper()}_TABLE'] = df_to_md(models_base_table_df)
+    templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_base_table_df)
 
     models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]
     # models_df = bold_non_baseline_rows(models_df)
-    templates_dict[f'{reg_model_name.upper()}_MODELS_SHORT'] = df_to_md(models_df)
+    templates_dict[f'{to_template_name(reg_model_name)}_MODELS_SHORT'] = df_to_md(models_df)
 
-    templates_dict[f'{reg_model_name.upper()}_BEST'] = models_df.iloc[:2]
+    templates_dict[f'{to_template_name(reg_model_name)}_BEST'] = models_df.iloc[:2]
     # TODO add number of models tested templates_dict[f'{model_name.upper()}_NUM_TESTED'] =
     return templates_dict
 
@@ -126,11 +154,12 @@ def calculate_template_dict():
     best_per_model = []
     best_cols = ("Pretrained", "Best model", "Avg.", "Pretrained Avg.")
     best = []
-    for model_name in base_models:
+    templates_dict['BASE_NAME'] = pd.read_csv(get_absolute_scores_models_csv_path())['base_model'].unique().tolist()
+    for model_name in templates_dict['BASE_NAME']:
         templates_dict.update(calculate_model_template(model_name))
         model_name = regularize_model_name(model_name)
-        pt = templates_dict[f'{model_name.upper()}_BEST'].iloc[0]
-        best_model = templates_dict[f'{model_name.upper()}_BEST'].iloc[1]
+        pt = templates_dict[f'{to_template_name(model_name)}_BEST'].iloc[0]
+        best_model = templates_dict[f'{to_template_name(model_name)}_BEST'].iloc[1]
         best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"]))
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)

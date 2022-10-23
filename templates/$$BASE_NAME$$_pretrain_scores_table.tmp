@@ -1,0 +1,11 @@
+---
+layout: default
+title: $$BASE_NAME$$-Baseline
+parent: $$BASE_NAME$$
+---
+This page contains the baseline scores of finetuning $$BASE_NAME$$ pretrained model over the 36 tasks,
+aggregated over runs of 20 random initializations.
+<br>
+
+$$$$BASE_NAME$$_PRETRAIN_TABLE$$
+

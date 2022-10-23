@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Roberta-base-Baseline
-parent: Roberta-base
+title: google_t5-v1_1-base-Baseline
+parent: google_t5-v1_1-base
 ---
-This page contains the baseline scores of finetuning RoBERTa base pretrained model over the 36 tasks,
+This page contains the baseline scores of finetuning google_t5-v1_1-base pretrained model over the 36 tasks,
 aggregated over runs of 20 random initializations.
 <br>
 

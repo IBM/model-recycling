@@ -3,8 +3,8 @@ layout: default
 title: Home
 nav_order: 0
 image: "Twitter_card.png"
-description: "Model-recycling - the best model per architecture"
-# description: "Comparing finetuned models from HF, as base models for future finetune on texts. "
+description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetune on texts. "
+
 ---
 # Welcome to model-recycling page
 
@@ -19,17 +19,16 @@ This site presents a dynamic view of the best models to choose for a given model
  performance of each base model.
 
 
-Currently: the best RoBERTa-base models are (baseline is RoBERTa base):
+Currently: the best models per architectures are:
 <br>
 
-|            | model_name                                   | avg     | mnli_lp   |
-|:-----------|:---------------------------------------------|:--------|:----------|
-| *baseline* | *roberta-base*                               | *76.22* | *nan*     |
-| 1          | janeel/muppet-roberta-base-finetuned-squad   | 78.04   | 83.24     |
-| 2          | deepakvk/roberta-base-squad2-finetuned-squad | 76.89   | 61.13     |
-| 3          | Andranik/TestQaV1                            | 76.77   | 60.35     |
-| 4          | luffycodes/roberta-base-mrpc                 | 76.72   | 63.43     |
-| 5          | huxxx657/roberta-base-finetuned-squad        | 76.71   | 59.77     |
+| Pretrained          | Best model                                  |   Avg. |   Pretrained Avg. |
+|:--------------------|:--------------------------------------------|-------:|------------------:|
+| roberta-base        | mwong/roberta-base-climate-evidence-related |  79.22 |             76.22 |
+| bert-base-uncased   | dingkun/retrievalv2                         |  72.33 |             76.22 |
+| google/t5-v1_1-base | ClueAI/PromptCLUE                           | nan    |             76.22 |
+| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate   |  74.07 |             76.22 |
+| t5-base             | Muzzi/t5-base-finetuned-eli5                |  76.08 |             76.22 |
 
 <br>
 <br>
