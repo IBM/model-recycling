@@ -9,9 +9,8 @@ has_children: true
 Ranking and performance of all ranked t5-base models ([full table](./results/t5-base_table.csv)).
 
 Notes:
-1. Changes of more than 0.36 above the [STD](t5-base-Baseline) are considered significant
+1. The baseline results can be found [here](t5-base_pretrain_scores_table)
 1. While the average improvement is small, many datasets show large gains.
-1. Muppet based model trained on many of the datasets, and may hence show
 <br>
 
 

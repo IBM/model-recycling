@@ -9,9 +9,8 @@ has_children: true
 Ranking and performance of all ranked bert-base-uncased models ([full table](./results/bert-base-uncased_table.csv)).
 
 Notes:
-1. Changes of more than 0.36 above the [STD](bert-base-uncased-Baseline) are considered significant
+1. The baseline results can be found [here](bert-base-uncased_pretrain_scores_table)
 1. While the average improvement is small, many datasets show large gains.
-1. Muppet based model trained on many of the datasets, and may hence show
 <br>
 
 
