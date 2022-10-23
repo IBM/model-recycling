@@ -31,7 +31,7 @@ def regularize_model_name(model_name):
 
 def get_base_table_path(model_name):
     return os.path.join(os.path.dirname(__file__), '..', 'results',
-                        f'{regularize_model_name(escape_files_name(model_name))}_table.csv')
+                        f'{escape_files_name(model_name)}_table.csv')
 
 
 def get_absolute_scores_models_csv_path():
@@ -138,7 +138,7 @@ def calculate_model_template(model_name):
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
     templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_df,
-                                                                           get_base_table_path(reg_model_name))
+                                                                           get_base_table_path(model_name))
     models_base_table_df = bold_non_baseline_rows(models_df.copy()[:11])
     templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_base_table_df)
 
