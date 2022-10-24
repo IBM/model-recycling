@@ -7,16 +7,22 @@ nav_order: 3
 
 ## Why should I use a different base model than the vanilla pretrained model?
 
-It improves results significantly in most cases, and in average. The best base RoBERTa-besa models improve results in 75% of the tasks we evaluated, with a median gain of 2.5 accuracy points. So if you had have to choose one base model, it would be best to use these top ranked models.
+It improves results significantly in most cases, and on average. The best base RoBERTa-besa models improve results in 75% of the tasks we evaluated, with a median gain of 2.5 accuracy points. So if you had have to choose one base model, it would be best to use these top ranked models.
 
 ## Can I get worse results from training over the top ranked base model when compared to the vanilla model?
 
 Yes. For example, in RoBERTa-base, about 1 in 4 tasks perform slightly better on the pretrained model. Furthermore, difference in seed randomization can yield variance in results. The best approach is to assess multiple models and evaluate on dev data. 
 
+## Some base models were trained on tasks that are included in the evaluation task set, while other base models were not. Is it a fair comparision?
+
+Yes.  During evaluation, each base model is finetuned on the evaluation task's train set and evaluated on the evaluation task's test set.  The fact that the base model was trained before on the same train set, does not give it access to any additional training data of  the evaluation task.   To convince yourself, consider the impact of running another training epoch on a model already finetuned and converged for a specific task - this additional epoch will have no effect.
+
+With that, linear probing (training only the classification head) does give an advantage to models that were already finetuned on the evaluated dataset.
+
 ## When shouldn't I use one of the recommended base models?
 
-You should always review the base model license and fact sheet to ensure they meet your requirement for the particular 
-use case. you should always only  download models and datasets from sources that you trust.  Downloading of models and 
+You should always review the base model license and factsheet to ensure they meet the requirements for your particular 
+use case. You should always only  download models and datasets from sources that you trust.  Downloading of models and 
 datasets can run code your machine (see for example [HuggingFace](https://huggingface.co/docs/transformers/autoclass_tutorial) warning). 
 We do not certify the quality and usability of  models listed.
 
