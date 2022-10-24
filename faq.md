@@ -7,7 +7,7 @@ nav_order: 3
 
 ## Why should I use a different base model than the vanilla pretrained model?
 
-It improves results significantly in most cases, and on average. The best base RoBERTa-besa models improve results in 75% of the tasks we evaluated, with a median gain of 2.5 accuracy points. So if you had have to choose one base model, it would be best to use these top ranked models.
+It improves results significantly in most cases, and on average. The best base RoBERTa-base models improve results in 75% of the tasks we evaluated, with a median gain of 2.5 accuracy points. So if you had have to choose one base model, it would be best to use these top ranked models.
 
 ## Can I get worse results from training over the top ranked base model when compared to the vanilla model?
 
