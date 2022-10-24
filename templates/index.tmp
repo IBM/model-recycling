@@ -14,8 +14,8 @@ Research slowly reaches consensus that some finetuned models are better base mod
 themselves.
 
 This site presents a dynamic view of the best models to choose for a given model size and architecture. We download
- finetuned models found in HuggingFace per architecture and efficiently ranked them over a representative task.
- We then evaluated the top ranked models by finetuning over a large set 36 target tasks, and report the average
+ finetuned models found in HuggingFace per architecture and efficiently rank them over a representative task.
+ We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
  performance of each base model.
 
 
@@ -27,9 +27,4 @@ $$BEST_PER_MODEL$$
 <br>
 <br>
 
-
-Some tasks gain a lot and others hardly change, you can see the full model ranking [here](roberta_base_table.md).
-<br>
-Changes of more than 0.36 (the [STD](Roberta-base-Baseline)) are considered significant. It is reported with the baseline performance -- finetuning pretrained RoBERTa base [here](pretrain_scores_table.md).
-
-This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
+<span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>

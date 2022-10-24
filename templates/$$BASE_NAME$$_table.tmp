@@ -10,7 +10,7 @@ Ranking and performance of all ranked $$BASE_NAME$$ models ([full table](./resul
 
 Notes:
 1. The baseline results can be found [here]($$BASE_NAME$$_pretrain_scores_table)
-1. While the average improvement is small, many datasets show large gains.
+1. While the average improvement is small, many datasets show large gains
 <br>
 
 
