@@ -28,7 +28,7 @@ Currently: the best models per architectures are:
 | bert-base-uncased   | dingkun/retrievalv2                        |  72.33 |             72.20 |
 | google/t5-v1_1-base | ClueAI/PromptCLUE                          | nan    |             76.22 |
 | bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate  |  74.07 |             76.22 |
-| t5-base             | helliun/conversational-qgen                | nan    |             76.22 |
+| t5-base             | din0s/t5-base-asqa-ob                      |  74.76 |             76.22 |
 
 <br>
 <br>

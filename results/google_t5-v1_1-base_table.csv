@@ -3,3 +3,7 @@
 1,ClueAI/PromptCLUE,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 2,binxu/mengzi-t5-base-finetuned-punctuation,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 3,ClueAI/PromptCLUE-base,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+4,anshoomehra/temp,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+5,anshoomehra/t5-v1_1-base-squadAndQnliAutoQgenAutoQgen,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+6,google/flan-t5-base,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+7,anshoomehra/t5-v1_1-base-squadV2AutoQgen,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
