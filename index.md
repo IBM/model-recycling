@@ -27,8 +27,8 @@ Currently: the best models per architectures are:
 | roberta-base        | janeel/muppet-roberta-base-finetuned-squad |  78.04 |             76.22 |
 | bert-base-uncased   | dingkun/retrievalv2                        |  72.33 |             72.20 |
 | google/t5-v1_1-base | ClueAI/PromptCLUE                          | nan    |             76.22 |
-| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate  |  74.07 |             76.22 |
-| t5-base             | din0s/t5-base-asqa-ob                      |  74.76 |             76.22 |
+| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate  |  74.07 |             72.43 |
+| t5-base             | din0s/t5-base-asqa-ob                      |  74.76 |             68.82 |
 
 <br>
 <br>

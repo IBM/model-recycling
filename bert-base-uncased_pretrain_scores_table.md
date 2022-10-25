@@ -2,6 +2,7 @@
 layout: default
 title: bert-base-uncased-Baseline
 parent: bert-base-uncased
+grand_parent:Rankings
 ---
 This page contains the baseline scores of finetuning bert-base-uncased pretrained model over the 36 tasks,
 aggregated over runs of 20 random initializations.
