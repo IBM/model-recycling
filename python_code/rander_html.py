@@ -168,10 +168,12 @@ def calculate_template_dict():
     best = []
     minimum_tested = 5
     scores_df = pd.read_csv(get_absolute_scores_models_csv_path())
-    templates_dict['BASE_NAME'] = scores_df['base_model'].unique().tolist()
-    for model_name in templates_dict['BASE_NAME']:
+    all_base_models = scores_df['base_model'].unique().tolist()
+    templates_dict['BASE_NAME'] = []
+    for model_name in all_base_models:
         if len(scores_df[scores_df['base_model'] == model_name].dropna()) < minimum_tested:
             continue
+        templates_dict['BASE_NAME'].append(model_name)
         templates_dict.update(calculate_model_template(model_name))
         model_name = regularize_model_name(model_name)
         pt = templates_dict[f'{to_template_name(model_name)}_BEST'].iloc[0]
