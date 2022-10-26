@@ -14,30 +14,21 @@ Research slowly reaches consensus that some finetuned models are better base mod
 themselves.
 
 This site presents a dynamic view of the best models to choose for a given model size and architecture. We download
- finetuned models found in HuggingFace per architecture and efficiently ranked them over a representative task.
- We then evaluated the top ranked models by finetuning over a large set 36 target tasks, and report the average
+ finetuned models found in HuggingFace per architecture and efficiently rank them over a representative task.
+ We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
  performance of each base model.
 
 
 Currently: the best models per architectures are:
 <br>
 
-| Pretrained          | Best model                                  |   Avg. |   Pretrained Avg. |
-|:--------------------|:--------------------------------------------|-------:|------------------:|
-| roberta-base        | janeel/muppet-roberta-base-finetuned-squad  |  78.04 |             76.22 |
-| bert-base-uncased   | enaserian/distilbert-base-uncased-finetuned |  72.36 |             72.20 |
-| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate   |  74.07 |             72.43 |
-| t5-base             | ammarpl/t5-base-finetuned-xsum-a            |  75.57 |             75.45 |
-| google/t5-v1_1-base | ClueAI/PromptCLUE                           | nan    |             68.82 |
+| Pretrained        | Best model                                  |   Avg. |   Pretrained Avg. |
+|:------------------|:--------------------------------------------|-------:|------------------:|
+| roberta-base      | janeel/muppet-roberta-base-finetuned-squad  |  78.04 |             76.22 |
+| bert-base-uncased | enaserian/distilbert-base-uncased-finetuned |  72.36 |             72.20 |
+| t5-base           | ammarpl/t5-base-finetuned-xsum-a            |  75.57 |             75.45 |
 
 <br>
 <br>
-
-
-Some tasks gain a lot and others hardly change, you can see the full model ranking [here](roberta_base_table.md).
-<br>
-Changes of more than 0.36 (the [STD](Roberta-base-Baseline)) are considered significant. It is reported with the baseline performance -- finetuning pretrained RoBERTa base [here](pretrain_scores_table.md).
 
 <span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>
-
-This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.
