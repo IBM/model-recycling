@@ -169,9 +169,9 @@ def calculate_template_dict():
     best = []
     minimum_tested = 5
     scores_df = pd.read_csv(get_absolute_scores_models_csv_path())
-    templates_dict['BASE_NAME'] = scores_df['base_model'].unique().tolist()
-    templates_dict['SUCCESSFULY_TESTED'] = 0
-    for model_name in templates_dict['BASE_NAME']:
+    templates_dict['BASE_NAME'] = []
+    templates_dict['SUCCESSFULLY_TESTED'] = 0
+    for model_name in scores_df['base_model'].unique().tolist():
         if len(scores_df[scores_df['base_model'] == model_name].dropna()) < minimum_tested:
             continue
         templates_dict['BASE_NAME'].append(model_name)
@@ -180,7 +180,7 @@ def calculate_template_dict():
         pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
         best_model = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[1]
         best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"]))
-        templates_dict['SUCCESSFULY_TESTED'] += templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED']
+        templates_dict['SUCCESSFULLY_TESTED'] += int(templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
 
