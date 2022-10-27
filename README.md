@@ -1,6 +1,6 @@
 # Model Recycling
 Welcome to the model recycling github.
-To see the best model to start from, or study the differences between finetuned models, please visit the [website](https://model-recycling.github.io/).
+To see the best model to start from, or study the differences between finetuned models, please visit the [website](https://ibm.github.io/model-recycling/).
 
 Feel free to open an issue if you have any questions or suggestions.
 ## Code
