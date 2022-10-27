@@ -18,7 +18,7 @@ This site presents a dynamic view of the best models to choose for a given model
  We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
  performance of each base model.
 
-
+Tested so far: $$SUCCESSFULY_TESTED$$ <br>
 Currently: the best models per architectures are:
 <br>
 

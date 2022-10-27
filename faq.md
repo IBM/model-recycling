@@ -28,7 +28,7 @@ We do not certify the quality and usability of  models listed.
 
 ## Which architectures are supported?
 
-In the initial version, Roberta-base models are tracked. Other architectures will be added soon. Want us to add a specific model? Please [contact us](contact_us.md) and say so. If you have recommended training parameters, it is even better, send them too. 
+We gradually add architectures of sequence to sequence and classification, the full list is [here](Rankings). Other architectures will be added soon. Want us to add a specific model? Please [contact us](contact_us.md) and say so. If you have recommended training parameters, it is even better, send them too. 
 
 ## Could you test my model?
 

@@ -73,7 +73,7 @@ def fill_file_content_by_template(root, filename, solved_filename, templates_dic
                         break
                     for m in ms:
                         if to_template_name(m) in templates_dict:
-                            line = line.replace(slot_symbol + m + slot_symbol, templates_dict[to_template_name(m)])
+                            line = line.replace(slot_symbol + m + slot_symbol, str(templates_dict[to_template_name(m)]))
                             break
                     else:
                         raise RuntimeError(
@@ -133,7 +133,8 @@ def calculate_model_template(model_name):
     models_df = models_df[models_df.apply(
         lambda row: not row.loc['mnli_lp':].iloc[1:].hasnans or row.loc['mnli_lp':].iloc[1:].isna().values.all(),
         axis=1)]
-
+    templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'] = len(models_df)
+    templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_FULLY_TESTED'] = len(models_df.dropna())
     cols = models_df.select_dtypes(np.number).columns
     models_df[cols] = models_df[cols].mul(100)
     models_df = models_df.drop(columns=dropped_columns)
@@ -168,17 +169,18 @@ def calculate_template_dict():
     best = []
     minimum_tested = 5
     scores_df = pd.read_csv(get_absolute_scores_models_csv_path())
-    all_base_models = scores_df['base_model'].unique().tolist()
-    templates_dict['BASE_NAME'] = []
-    for model_name in all_base_models:
+    templates_dict['BASE_NAME'] = scores_df['base_model'].unique().tolist()
+    templates_dict['SUCCESSFULY_TESTED'] = 0
+    for model_name in templates_dict['BASE_NAME']:
         if len(scores_df[scores_df['base_model'] == model_name].dropna()) < minimum_tested:
             continue
         templates_dict['BASE_NAME'].append(model_name)
         templates_dict.update(calculate_model_template(model_name))
-        model_name = regularize_model_name(model_name)
-        pt = templates_dict[f'{to_template_name(model_name)}_BEST'].iloc[0]
-        best_model = templates_dict[f'{to_template_name(model_name)}_BEST'].iloc[1]
+        reg_model_name = regularize_model_name(model_name)
+        pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
+        best_model = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[1]
         best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"]))
+        templates_dict['SUCCESSFULY_TESTED'] += templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED']
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
 
