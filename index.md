@@ -33,7 +33,7 @@ Tested so far: 841 (and counting)
 <br>
 <br>
 
-To learn more see our [FAQ](FAQ) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
-If you have any feedback or question please [contact us](Contact us).
+To learn more see our [FAQ](faq) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
+If you have any feedback or question please [contact us](contact_us).
 
 <span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>
