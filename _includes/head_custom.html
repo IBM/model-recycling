@@ -1,1 +1,27 @@
+<script>
+document.addEventListener('readystatechange', event => {
+  switch (document.readyState) {
+    case "complete":
+      console.log("load page - append to page statistics ");
+      asyncCall();
+      break;
+  }
+});
 
+async function asyncCall() {
+  console.log('calling');
+  
+   try {     
+    const response = await fetch('https://model-recycling-logger.ris2-debater-event.us-east.containers.appdomain.cloud/', {
+	method: 'post',
+	headers: {
+	    'Content-Type': 'application/json'
+        },
+	body: JSON.stringify({url: window.location.href})
+    });
+    console.log('Completed!', response);
+  } catch(err) {
+    console.error(`Error: ${err}`);
+  }  
+}  
+</script>
