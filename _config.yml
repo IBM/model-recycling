@@ -31,6 +31,3 @@ defaults:
       path: ""
     values:
       image: "/Twitter_card.png"
-
-# Google Analytics
-google_analytics: G-V5LL44F1GX  
