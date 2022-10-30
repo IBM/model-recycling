@@ -18,18 +18,22 @@ This site presents a dynamic view of the best models to choose for a given model
  We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
  performance of each base model.
 
-Tested so far: 779 (and counting)
+Tested so far: 841 (and counting)
 ## Best models per architectures
 <br>
 
-| Pretrained        | Best model                                  |   Avg. |   Pretrained Avg. |
-|:------------------|:--------------------------------------------|-------:|------------------:|
-| roberta-base      | janeel/muppet-roberta-base-finetuned-squad  |  78.04 |             76.22 |
-| bert-base-uncased | enaserian/distilbert-base-uncased-finetuned |  72.36 |             72.20 |
-| bert-base-cased   | Dylan1999/bert-finetuned-squad-accelerate   |  74.07 |             72.43 |
-| t5-base           | zeineb/LearningQ-t5-Answer-agnostic-QG      |  78.02 |             75.45 |
+| Pretrained          | Best model                                 |   Avg. |   Pretrained Avg. |
+|:--------------------|:-------------------------------------------|-------:|------------------:|
+| roberta-base        | janeel/muppet-roberta-base-finetuned-squad |  78.04 |             76.22 |
+| bert-base-uncased   | S1d-dha-nth3/ncert_bio                     |  73.57 |             72.20 |
+| bert-base-cased     | Dylan1999/bert-finetuned-squad-accelerate  |  74.07 |             72.43 |
+| t5-base             | adit94/nlpcharade                          |  78.23 |             75.45 |
+| google/t5-v1_1-base | anshoomehra/t5-v1-base-s2-auto-qgen        |  74.27 |             68.82 |
 
 <br>
 <br>
+
+To learn more see our [FAQ](FAQ) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
+If you have any feedback or question please [contact us](Contact us).
 
 <span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>
