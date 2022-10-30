@@ -3,7 +3,7 @@ layout: default
 title: Home
 nav_order: 0
 image: "Twitter_card.png"
-description: "Model-recycling - choosing the best base model for training your task. A comprehensive comparision of finetuned models from HuggingFace hub as base models for further finetuning on new tasks. "
+description: "Model-recycling - choose the best base model for training your task. A comprehensive comparision of finetuned models from HuggingFace hub as base models for further finetuning on new tasks. "
 
 ---
 # Welcome to model-recycling page
