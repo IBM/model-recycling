@@ -17,7 +17,7 @@ async function asyncCall() {
 	headers: {
 	    'Content-Type': 'application/json'
         },
-	body: JSON.stringify({url: window.location.href})
+	body: JSON.stringify({url: window.location.href.split('?')[0]})
     });
     console.log('Completed!', response);
   } catch(err) {
