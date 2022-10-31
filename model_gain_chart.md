@@ -1,6 +1,6 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+<body>
 <h1 id="header">Model gains</h1>
 <h2 id="avg">Model gains</h2>
 <canvas id="myChart"></canvas>
@@ -65,3 +65,6 @@ layout: default
         config
     );
 </script>
+
+</body>
+</html> 
