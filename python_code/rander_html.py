@@ -1,4 +1,5 @@
 import os
+import urllib
 
 import numpy as np
 import pandas as pd
@@ -90,9 +91,7 @@ def add_avg_and_sort_columns(df):
     return df
 
 
-def df_to_md(df, path_to_csv_file=None):
-    if path_to_csv_file:
-        df.to_csv(path_to_csv_file)
+def df_to_md(df):
     return df.to_markdown(floatfmt='.2f')
 
 
@@ -148,14 +147,20 @@ def calculate_model_template(model_name):
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
-    templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_df,
-                                                                           get_base_table_path(model_name))
+
+    models_df.to_csv(get_base_table_path(model_name))
+
+    def create_dict(row):
+        result = (row.iloc[1:] - models_df.iloc[0, 1:]).to_dict()
+        result = {k: f'{float(v):.2f}' for k, v in result.items()}
+        result['model_name'] = models_df['model_name'][row.name]
+        result['base_name'] = model_name
+        return result
+    gains_dict = models_df.apply(create_dict ,axis=1)
+    models_df['model_name'] = models_df.apply(lambda row: f"[{row['model_name']}](model_gain_chart?{urllib.parse.urlencode(gains_dict[row.name])})", axis=1)
+    models_df.at[0, 'model_name'] = f'[{model_name}]({model_name}_pretrain_scores_table)'
     models_base_table_df = bold_non_baseline_rows(models_df.copy()[:11])
     templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_base_table_df)
-
-    models_df = models_df[['model_name', 'avg', 'mnli_lp']].iloc[0:6]
-    # models_df = bold_non_baseline_rows(models_df)
-    templates_dict[f'{to_template_name(reg_model_name)}_MODELS_SHORT'] = df_to_md(models_df)
 
     templates_dict[f'{to_template_name(reg_model_name)}_BEST'] = models_df.iloc[:2]
     # TODO add number of models tested templates_dict[f'{model_name.upper()}_NUM_TESTED'] =
