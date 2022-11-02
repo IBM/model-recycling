@@ -33,7 +33,9 @@ Tested so far: 984 (and counting)
 <br>
 <br>
 
-To learn more see our [FAQ](FAQ) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
-If you have any feedback or question please [contact us](Contact us).
+To learn more see our [FAQ](faq) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
+If you have any feedback or question please [contact us](contact_us).
 
 <span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>
+
+"mnli_lp","20_newsgroup","ag_news","amazon_reviews_multi","anli","boolq","cb","cola","copa","dbpedia","esnli","financial_phrasebank","imdb","isear","mnli","mrpc","multirc","poem_sentiment","qnli","qqp","rotten_tomatoes","rte","sst2","sst_5bins","stsb","trec_coarse","trec_fine","tweet_ev_emoji","tweet_ev_emotion","tweet_ev_hate","tweet_ev_irony","tweet_ev_offensive","tweet_ev_sentiment","wic","wnli","wsc","yahoo_answers"
