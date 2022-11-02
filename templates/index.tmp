@@ -10,11 +10,12 @@ description: "Model-recycling - the best model per architecture. Comparing finet
 
 Hardly anyone trains from scratch anymore, we all finetune over a pretrained model. 
 
-Research slowly reaches consensus that some finetuned models are better base models than the pretrained models 
+[Research](https://arxiv.org/abs/2211.00107) slowly reaches consensus that some finetuned models are better base models than the pretrained models
 themselves.
 
-This site presents a dynamic view of the best models to choose for a given model size and architecture. We download
- finetuned models found in HuggingFace per architecture and efficiently rank them over a representative task.
+This site presents a dynamic view of the best models to choose for a given model size and architecture.
+We follow the findings and methodology from our Our [paper](https://arxiv.org/abs/2211.00107):
+We download finetuned models found in HuggingFace per architecture and efficiently rank them over a representative task.
  We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
  performance of each base model.
 
@@ -27,9 +28,7 @@ $$BEST_PER_MODEL$$
 <br>
 <br>
 
-To learn more see our [FAQ](faq) or read the paper.  To see detailed evaluation results on each architecture [here](Rankings).
+To learn more see our [FAQ](faq) or read the paper. See detailed evaluation results on each architecture [here](Rankings).
 If you have any feedback or question please [contact us](contact_us).
 
 <span style="font-size:0.8em;">This work was performed in IBM Research by Leshem Choshen, Elad Venezian, Shachar Don-Yehiya, Noam Slonim and Yoav Katz.</span>
-
-"mnli_lp","20_newsgroup","ag_news","amazon_reviews_multi","anli","boolq","cb","cola","copa","dbpedia","esnli","financial_phrasebank","imdb","isear","mnli","mrpc","multirc","poem_sentiment","qnli","qqp","rotten_tomatoes","rte","sst2","sst_5bins","stsb","trec_coarse","trec_fine","tweet_ev_emoji","tweet_ev_emotion","tweet_ev_hate","tweet_ev_irony","tweet_ev_offensive","tweet_ev_sentiment","wic","wnli","wsc","yahoo_answers"
