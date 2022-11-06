@@ -11,5 +11,10 @@ We provide code to fuse models following this [paper](https://arxiv.org/abs/2006
 ## Citation
 Cite information:
 ```
-TBD
+@article{choshen2022start,
+  title={Where to start? Analyzing the potential value of intermediate models},
+  author={Choshen, Leshem and Venezian, Elad and Don-Yehia, Shachar and Slonim, Noam and Katz, Yoav},
+  journal={arXiv preprint arXiv:2211.00107},
+  year={2022}
+}
 ```
