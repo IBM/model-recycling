@@ -14,10 +14,10 @@ Hardly anyone trains from scratch anymore, we all finetune over a pretrained mod
 themselves.
 
 This site presents a dynamic view of the best models to choose for a given model size and architecture.
-We follow the findings and methodology from our Our [paper](https://arxiv.org/abs/2211.00107):
+We follow the findings and methodology from our [paper](https://arxiv.org/abs/2211.00107):
 We download finetuned models found in HuggingFace per architecture and efficiently rank them over a representative task.
- We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
- performance of each base model.
+We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
+performance of each base model.
 
 Tested so far: $$SUCCESSFULLY_TESTED$$ (and counting)
 ## Best models per architectures
