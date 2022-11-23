@@ -888,3 +888,8 @@
 886,flax-community/roberta-base-als,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 887,flax-community/roberta-base-als-demo,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 888,mrm8488/codebert-finetuned-clone-detection,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+889,allenai/dsp_roberta_base_tapt_citation_intent_1688,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+890,allenai/dsp_roberta_base_tapt_hyperpartisan_news_5015,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+891,allenai/dsp_roberta_base_tapt_hyperpartisan_news_515,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+892,allenai/dsp_roberta_base_tapt_imdb_20000,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+893,allenai/dsp_roberta_base_tapt_imdb_70000,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
