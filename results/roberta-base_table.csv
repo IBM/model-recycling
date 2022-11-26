@@ -919,3 +919,8 @@
 917,m3/m3-experiment-roberta-base-amcd-add-v2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 918,m3/m3-experiment-roberta-base-amcd-replace-v2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 919,m3/m3-experiment-roberta-base-tweet-eval-irony-replace-v2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+920,Gozdi/roberta-base-adversarial-qa-exp-0-epoch-1,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+921,Gozdi/roberta-base-adversarial-qa-exp-0-epoch-2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+922,Gozdi/roberta-base-adversarial-qa-exp-1-epoch-0,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+923,m3/m3-experiment-roberta-base-amcd-replace-v3,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+924,m3/m3-experiment-roberta-base-tweet-eval-irony-replace-v3,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
