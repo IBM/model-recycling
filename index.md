@@ -3,7 +3,7 @@ layout: default
 title: Home
 nav_order: 0
 image: "Twitter_card.png"
-description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetune on texts. "
+description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetuning. "
 
 ---
 # Welcome to model-recycling page
@@ -19,7 +19,7 @@ We download finetuned models found in HuggingFace per architecture and efficient
 We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
 performance of each base model.
 
-Tested so far: 1306 (and counting)
+Tested so far: 1317 (and counting)
 ## Best models per architectures
 <br>
 
