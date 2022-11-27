@@ -3,7 +3,7 @@ layout: default
 title: Home
 nav_order: 0
 image: "Twitter_card.png"
-description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetune on texts. "
+description: "Model-recycling - the best model per architecture. Comparing finetuned models from HF, as base models for future finetuning. "
 
 ---
 # Welcome to model-recycling page
