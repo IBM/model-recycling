@@ -9,5 +9,6 @@ aggregated over runs of 20 random initializations.
 <br>
 
 $$$$BASE_NAME$$_PRETRAIN_TABLE$$
+Download full repetitions table: [csv](./results/models_results_$$BASE_NAME$$_pretrain.csv)
 
 [Home](Home)
