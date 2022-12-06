@@ -170,7 +170,7 @@ def calculate_model_template(model_name):
 def calculate_template_dict():
     templates_dict = {}
     best_per_model = []
-    best_cols = ("Pretrained", "Best model", "Avg.", "Pretrained Avg.", "Table")
+    best_cols = ("Pretrained", "Best model", "Avg.", "Pretrained Avg.", "Ranking")
     best = []
     minimum_tested = 5
     scores_df = pd.read_csv(get_absolute_scores_models_csv_path())
