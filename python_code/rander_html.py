@@ -170,7 +170,7 @@ def calculate_model_template(model_name):
 def calculate_template_dict():
     templates_dict = {}
     best_per_model = []
-    best_cols = ("Pretrained", "Best model", "Avg.", "Pretrained Avg.")
+    best_cols = ("Pretrained", "Best model", "Avg.", "Pretrained Avg.", "Table")
     best = []
     minimum_tested = 5
     scores_df = pd.read_csv(get_absolute_scores_models_csv_path())
@@ -184,7 +184,7 @@ def calculate_template_dict():
         reg_model_name = regularize_model_name(model_name)
         pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
         best_model = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[1]
-        best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"]))
+        best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"], f'[link]({model_name}_table)'))
         templates_dict['SUCCESSFULLY_TESTED'] += int(templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
