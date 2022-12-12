@@ -7,6 +7,7 @@ import math
 import re
 
 # import tabulate
+from python_code.create_pull_request import create_hf_model_page_evaluation_content_for_model
 
 template_file_extension = 'tmp'
 md_file_extension = 'md'
@@ -147,7 +148,8 @@ def calculate_model_template(model_name):
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
-
+    for i in range(1,4):
+        create_hf_model_page_evaluation_content_for_model(models_df.iloc[i:i+1], model_name, i)
     models_df.to_csv(get_base_table_path(model_name))
 
     def create_dict(row):
