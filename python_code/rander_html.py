@@ -1,13 +1,11 @@
 import os
 import urllib
-
 import numpy as np
 import pandas as pd
 import math
 import re
+from hf_page_evaluation import create_hf_model_page_evaluation_content_for_model
 
-# import tabulate
-from python_code.create_pull_request import create_hf_model_page_evaluation_content_for_model
 
 template_file_extension = 'tmp'
 md_file_extension = 'md'
