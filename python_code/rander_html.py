@@ -186,7 +186,8 @@ def calculate_template_dict():
         reg_model_name = regularize_model_name(model_name)
         pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
         best_model = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[1]
-        best.append((pt["model_name"], best_model["model_name"], best_model["avg"], pt["avg"], f'[link]({model_name}_table)'))
+        best.append((pt["model_name"], best_model["model_name"],
+                     best_model["avg"], pt["avg"], f'[link]({escape_files_name(model_name)}_table)'))
         templates_dict['SUCCESSFULLY_TESTED'] += int(templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
