@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 import math
 import re
-from hf_page_evaluation import create_hf_model_page_evaluation_content_for_model
 
+from hf_page_evaluation import create_hf_model_page_evaluation_content_for_model
 
 template_file_extension = 'tmp'
 md_file_extension = 'md'
@@ -146,8 +146,6 @@ def calculate_model_template(model_name):
     models_df = pd.concat([models_df, pretrain_df.loc['mean'].to_frame().T], ignore_index=True)
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
-    for i in range(1,4):
-        create_hf_model_page_evaluation_content_for_model(models_df.iloc[i:i+1], model_name, i)
     models_df.to_csv(get_base_table_path(model_name))
 
     def create_dict(row):
@@ -156,8 +154,19 @@ def calculate_model_template(model_name):
         result['model_name'] = models_df['model_name'][row.name]
         result['base_name'] = model_name
         return result
-    gains_dict = models_df.apply(create_dict ,axis=1)
-    models_df['model_name'] = models_df.apply(lambda row: f"[{row['model_name']}](model_gain_chart?{urllib.parse.urlencode(gains_dict[row.name])})", axis=1)
+
+    gains_dict = models_df.apply(create_dict, axis=1)
+    models_df_raw = models_df.copy()
+    models_df['gain_chart_url'] = models_df.apply(
+        lambda row: f'model_gain_chart?{urllib.parse.urlencode(gains_dict[row.name])}', axis=1)
+    for i in range(1, 4):
+        create_hf_model_page_evaluation_content_for_model(model_df=models_df_raw.iloc[i:i + 1],
+                                                          gain_chart_url=models_df['gain_chart_url'].iloc[i:i + 1].item(),
+                                                          model_name=model_name, i=i,
+                                                          pretrain_avg=pretrain_df['avg']['mean'])
+    models_df['model_name'] = models_df.apply(
+        lambda row: f"[{row['model_name']}]({row['gain_chart_url']})", axis=1)
+    models_df = models_df.drop('gain_chart_url', axis=1)
     models_df.at[0, 'model_name'] = f'[{model_name}]({model_name}_pretrain_scores_table)'
     models_base_table_df = bold_non_baseline_rows(models_df.copy()[:11])
     templates_dict[f'{to_template_name(reg_model_name)}_TABLE'] = df_to_md(models_base_table_df)
@@ -186,7 +195,8 @@ def calculate_template_dict():
         best_model = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[1]
         best.append((pt["model_name"], best_model["model_name"],
                      best_model["avg"], pt["avg"], f'[link]({escape_files_name(model_name)}_table)'))
-        templates_dict['SUCCESSFULLY_TESTED'] += int(templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
+        templates_dict['SUCCESSFULLY_TESTED'] += int(
+            templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
 
