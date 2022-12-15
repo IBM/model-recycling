@@ -18,3 +18,8 @@
 16,bergum/rank-T5-flan,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 17,tripplyons/flan-t5-base-xsum,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 18,consciousAI/question-answering-generative-t5-v1-base-s-q-c,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+19,consciousAI/question-generation-auto-hints-t5-v1-base-s-q,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+20,consciousAI/question-generation-auto-hints-t5-v1-base-s-q-c,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+21,consciousAI/question-generation-auto-t5-v1-base-s,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+22,consciousAI/question-generation-auto-t5-v1-base-s-q,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+23,consciousAI/question-generation-auto-t5-v1-base-s-q-c,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
