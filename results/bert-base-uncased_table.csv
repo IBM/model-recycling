@@ -356,3 +356,6 @@
 354,aayu/bert-base-uncased-finetuned-jdcv-Nov16,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 355,mobashgr/BC2GM-WLT-256-PubMedBERT-latest,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 356,vencortex/DeepFeatEcosystemOntologyBase,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+357,GItaf/BERT-FINETUNE-MBTI-CLS-BERT-FINETUNE-MBTI-CLS-JointBERT-Warmup-from-CLS,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+358,GItaf/BERT-FINETUNE-MBTI-LM-BERT-FINETUNE-MBTI-LM-JointBERT-Warmup-from-LM,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+359,asdfghjkl01/bert-base-uncased-finetuned-squad,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
