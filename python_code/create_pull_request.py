@@ -54,7 +54,7 @@ def replace_content(lines, repo_id, avg, pretrain_avg, arch, rank, table, replac
 
 def open_pull_request_for_model_card(repo_id, table, rank, arch, avg, pretrain_avg,
                                      do_create_commit=False, force_rewrite=False, read_only=False,
-                                     replace_from=None, replace_to=None, gain_chart_url=None
+                                     replace_from=None, replace_to=None, gain_chart_url=None, skip_rea
                                      ):
     path = hf_hub_download(repo_id=repo_id, filename=readme_file, force_download=True)
     with open(path) as file:
@@ -107,9 +107,9 @@ if __name__ == '__main__':
                                          pretrain_avg=record['pretrain_avg'],
                                          gain_chart_url=record['gain_chart_url'],
                                          do_create_commit=True,
-                                         force_rewrite=True,
-                                         read_only=False,
+                                         force_rewrite=False,
+                                         read_only=True,
                                          replace_from=53, replace_to=68
                                          )
-        if i == 0:
+        if i == 1:
             break
