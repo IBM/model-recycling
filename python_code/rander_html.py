@@ -122,6 +122,7 @@ def calculate_model_template(model_name):
 
     models_df = pd.read_csv(get_absolute_scores_models_csv_path())
 
+    #models_df =
     models_df = models_df[models_df["base_model"] == model_name]
     rows_with_nans = models_df[models_df.apply(
         lambda row: not (not row.loc['mnli_lp':].iloc[1:].hasnans or row.loc['mnli_lp':].iloc[1:].isna().values.all()),
@@ -147,6 +148,9 @@ def calculate_model_template(model_name):
     models_df = pd.concat([models_df.iloc[-1:], models_df.iloc[:-1]], ignore_index=True)
     models_df.at[0, 'model_name'] = model_name
     models_df.to_csv(get_base_table_path(model_name))
+
+    models_df = models_df[models_df['model_name'].apply(lambda st: 'ibm/ColD-Fusion-itr' not in st)]
+    models_df = models_df.reset_index(drop=True)
 
     def create_dict(row):
         result = (row.iloc[1:] - models_df.iloc[0, 1:]).to_dict()
@@ -197,8 +201,14 @@ def calculate_template_dict():
                      best_model["avg"], pt["avg"], f'[link]({escape_files_name(model_name)}_table)'))
         templates_dict['SUCCESSFULLY_TESTED'] += int(
             templates_dict[f'{to_template_name(reg_model_name)}_SUCCESSFULLY_TESTED'])
+        templates_dict[f'{to_template_name(model_name)}_COMMENTS'] = ''
     templates_dict['BEST_PER_MODEL'] = \
         pd.DataFrame(best, columns=best_cols).to_markdown(floatfmt='.2f', index=False)
+
+    templates_dict[f'{to_template_name("roberta-base")}_COMMENTS'] = '1. ' \
+                                                                     '[ColD Fusion](https://arxiv.org/abs/2212.01378) ' \
+                                                                     'variations were removed to' \
+                                                                     ' avoid cluttering the table'
 
     # models_df = models_df[['model_name', 'avg', 'mnli_lp']]
     # print_table_to_html(models_df, roberta_absolute_scores_avg_html_file_path)
