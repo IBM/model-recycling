@@ -6,7 +6,7 @@ has_children: true
 ---
 [comment]: # (This page contains a link to a table with the ranking and performance of all ranked t5-base models. In addition, it contains a table with the baseline and the 10 best models. The original ranking was done by finetuning only the classification head of the model (linear probing) over the MNLI dataset.  The best models  by this ranking where ranked by the average accuracy after finetuning over the 36 datasets (except for the stsb dataset, where we used the Spearman correlation instead of accuracy).)
 
-Ranking and performance of all 175 ranked t5-base models ([full table](./results/t5-base_table.csv)).  The top 56 models were fully tested.
+Ranking and performance of all 176 ranked t5-base models ([full table](./results/t5-base_table.csv)).  The top 56 models were fully tested.
 
 Notes:
 1. The baseline results can be found [here](t5-base_pretrain_scores_table)
