@@ -173,4 +173,6 @@ if __name__ == '__main__':
     pd_df = pd_df[pd_df.columns.drop(list(pd_df.filter(regex='Unnamed')))]
     pd_df.to_csv(PR_DF)
     with open("props", "w") as f:
-        f.write(f"number_of_prs={number_of_prs}")
+        if number_of_prs > 0:
+            f.write(f"number_of_prs={number_of_prs}\n")
+        f.write(f"\n")
