@@ -17,7 +17,7 @@ if __name__ == '__main__':
             ds_ = pd_df.loc[pd_df['model'] == model]
             arch = ds_['arch'].item()
             rank = ds_['rank'].item()
-            if pd_df.loc[pd_df['model'] == model]['pr'].item() == False:
+            if pd_df.loc[pd_df['model'] == model]['pr'].item() == 'False':
                 print(f' model: {model}, arh: {arch}, rank: {rank}')
                 create_pr(arch=arch, rank=rank, repo_id=model)
                 ind = pd_df.loc[pd_df['model'] == model].index.item()
