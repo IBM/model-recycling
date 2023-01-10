@@ -4,14 +4,11 @@ import pickle
 import pandas as pd
 
 from python_code.calc_pr_files import PR_DF, slash_mark, create_pr
-from python_code.hf_page_evaluation import records_file
 
 md_files_path = 'md_files/with_fuse'
 
 
 if __name__ == '__main__':
-    with open(records_file, 'rb') as handle:
-        records = pickle.load(handle)
     pd_df = pd.read_csv(PR_DF)
     for filename in os.listdir(md_files_path):
         f = os.path.join(md_files_path, filename)
