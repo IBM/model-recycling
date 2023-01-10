@@ -344,3 +344,18 @@ If you have questions or ideas for cooperation, contact me at m{dot}laurer{at}vu
 
 ### Debugging and issues
 Note that DeBERTa-v3 was released on 06.12.21 and older versions of HF Transformers seem to have issues running the model (e.g. resulting in an issue with the tokenizer). Using Transformers>=4.13 might solve some issues. 
+
+## Model Recycling
+
+[Evaluation on 36 datasets](https://ibm.github.io/model-recycling/model_gain_chart?avg=0.65&mnli_lp=nan&20_newsgroup=-0.61&ag_news=-0.01&amazon_reviews_multi=0.46&anli=0.84&boolq=2.12&cb=16.07&cola=-0.76&copa=8.60&dbpedia=-0.40&esnli=-0.29&financial_phrasebank=-1.98&imdb=-0.47&isear=-0.22&mnli=-0.21&mrpc=0.50&multirc=1.91&poem_sentiment=1.73&qnli=0.07&qqp=-0.37&rotten_tomatoes=-0.74&rte=3.94&sst2=-0.45&sst_5bins=0.07&stsb=1.27&trec_coarse=-0.16&trec_fine=0.18&tweet_ev_emoji=-0.93&tweet_ev_emotion=-1.33&tweet_ev_hate=-1.67&tweet_ev_irony=-5.46&tweet_ev_offensive=-0.17&tweet_ev_sentiment=-0.11&wic=-0.21&wnli=-1.20&wsc=4.18&yahoo_answers=-0.70&model_name=MoritzLaurer%2FDeBERTa-v3-base-mnli-fever-anli&base_name=microsoft%2Fdeberta-v3-base) using MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli as a base model yields average score of 79.69 in comparison to 79.04 by microsoft/deberta-v3-base.
+
+The model is ranked 2nd among all tested models for the microsoft/deberta-v3-base architecture as of 09/01/2023.
+
+Results:
+
+|   20_newsgroup |   ag_news |   amazon_reviews_multi |   anli |   boolq |      cb |    cola |   copa |   dbpedia |   esnli |   financial_phrasebank |   imdb |   isear |    mnli |    mrpc |   multirc |   poem_sentiment |   qnli |     qqp |   rotten_tomatoes |     rte |    sst2 |   sst_5bins |    stsb |   trec_coarse |   trec_fine |   tweet_ev_emoji |   tweet_ev_emotion |   tweet_ev_hate |   tweet_ev_irony |   tweet_ev_offensive |   tweet_ev_sentiment |     wic |    wnli |     wsc |   yahoo_answers |
+|---------------:|----------:|-----------------------:|-------:|--------:|--------:|--------:|-------:|----------:|--------:|-----------------------:|-------:|--------:|--------:|--------:|----------:|-----------------:|-------:|--------:|------------------:|--------:|--------:|------------:|--------:|--------------:|------------:|-----------------:|-------------------:|----------------:|-----------------:|---------------------:|---------------------:|--------:|--------:|--------:|----------------:|
+|        85.8072 |   90.4333 |                  67.32 | 59.625 |  85.107 | 91.0714 | 85.8102 |     67 |   79.0333 | 91.6327 |                   82.5 |  94.02 | 71.6428 | 89.5749 | 89.7059 |   64.1708 |          88.4615 | 93.575 | 91.4148 |           89.6811 | 86.2816 | 94.6101 |     57.0588 | 91.5508 |          97.6 |        91.2 |           45.264 |            82.6179 |         54.5455 |          74.3622 |              84.8837 |              71.6949 | 71.0031 | 69.0141 | 68.2692 |         71.3333 |
+
+
+For more information, see: [Model Recycling](https://ibm.github.io/model-recycling/)
