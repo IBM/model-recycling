@@ -31,3 +31,6 @@ defaults:
       path: ""
     values:
       image: "/Twitter_card.png"
+
+exclude:
+- python_code/md_files/
