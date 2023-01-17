@@ -77,7 +77,7 @@ def fill_file_content_by_template(root, filename, solved_filename, templates_dic
                             break
                     else:
                         raise RuntimeError(
-                            f'Failed to find resolvable pattern in line. Available keys: {list(templates_dict.keys())}.\n\n line: {line}.')
+                            f'Failed to find resolvable pattern in line\n Line: {line}\n. Available keys: {list(templates_dict.keys())}.\n\n line: {line}.')
                 md_file.write(line)
 
 
@@ -193,6 +193,7 @@ def calculate_template_dict():
         if len(scores_df[scores_df['base_model'] == model_name].dropna()) < minimum_tested:
             continue
         templates_dict['BASE_NAME'].append(model_name)
+        templates_dict[f'{to_template_name(model_name)}_BASE_NAME'] = model_name.replace('-', '_')
         templates_dict.update(calculate_model_template(model_name))
         reg_model_name = regularize_model_name(model_name)
         pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
