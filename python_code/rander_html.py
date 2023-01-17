@@ -193,7 +193,7 @@ def calculate_template_dict():
         if len(scores_df[scores_df['base_model'] == model_name].dropna()) < minimum_tested:
             continue
         templates_dict['BASE_NAME'].append(model_name)
-        templates_dict[f'{to_template_name(model_name)}_BASE_NAME'] = model_name.replace('-', '_')
+        templates_dict[f'{escape_files_name(to_template_name(model_name))}_BASE_NAME'] = model_name.replace('-', '_')
         templates_dict.update(calculate_model_template(model_name))
         reg_model_name = regularize_model_name(model_name)
         pt = templates_dict[f'{to_template_name(reg_model_name)}_BEST'].iloc[0]
