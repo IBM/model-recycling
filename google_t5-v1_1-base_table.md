@@ -34,4 +34,4 @@ Notes:
 <br>
 Download full models ranking table: [csv](./results/google_t5-v1_1-base_table.csv)
 
-[Home](Home)
+[Home](.)

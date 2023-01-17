@@ -34,4 +34,4 @@ Notes:
 <br>
 Download full models ranking table: [csv](./results/bert-base-uncased_table.csv)
 
-[Home](Home)
+[Home](.)

@@ -34,4 +34,4 @@ Notes:
 <br>
 Download full models ranking table: [csv](./results/microsoft_deberta-v3-base_table.csv)
 
-[Home](Home)
+[Home](.)

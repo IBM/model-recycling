@@ -34,4 +34,4 @@ Notes:
 <br>
 Download full models ranking table: [csv](./results/t5-base_table.csv)
 
-[Home](Home)
+[Home](.)
