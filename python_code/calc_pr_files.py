@@ -143,6 +143,7 @@ if __name__ == '__main__':
 
         pd_df = pd.DataFrame(data)
         pd_df.to_csv(PR_DF)
+    pd_df = pd_df[pd_df.columns.drop(list(pd_df.filter(regex='Unnamed')))]
     number_of_prs = 0
     for i, record in enumerate(records):
         read_orig_md_file(repo_id=record['model'])
@@ -154,7 +155,7 @@ if __name__ == '__main__':
 
             if len(pd_df.loc[pd_df['model'] == record['model']]) == 0:
                 pd_df.loc[len(pd_df.index)] = \
-                    [len(pd_df.index), record['model'], record['i'], record['arch'], False]
+                    [record['model'], record['i'], record['arch'], False]
 
             print(f"should pr {record}")
             update_md_file_with_fuse_results(repo_id=record['model'], table=record['lines'],
