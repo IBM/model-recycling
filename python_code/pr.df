@@ -27,3 +27,4 @@
 25,RERobbins/qg_T5_nq,2,google/t5-v1_1-base,True
 26,RERobbins/qg_T5_triviaqa,3,google/t5-v1_1-base,True
 27,mariolinml/deberta-v3-base_MNLI_10_19_v0,3,microsoft/deberta-v3-base,False
+28,momtaz/bert-finetuned-squad,2,bert-base-cased,False
