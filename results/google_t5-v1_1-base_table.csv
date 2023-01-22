@@ -34,3 +34,7 @@
 32,mrm8488/flan-t5-base-finetuned-openai-summarize_from_feedback,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 33,philschmid/flan-t5-base-samsum,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 34,svjack/T5-daliy-dialogue,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+35,Gabriel/flan-t5-base-xsum-swe,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+36,svjack/T5-dialogue-choose,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+37,svjack/T5-dialogue-collect,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+38,svjack/T5-dialogue-collect-v0,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
