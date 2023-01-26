@@ -45,3 +45,6 @@
 43,svjack/T5-dialogue-multi-v0,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 44,brutusxu/flan-t5-base-finetuned-xsum,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 45,p-christ/Autocomplete20Dec,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+46,ismet/flan-t5-base-finetuned-asset,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+47,ismet/flan-t5-base-finetuned-turk,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+48,mrm8488/flan-t5-base-finetuned-gsm8k,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
