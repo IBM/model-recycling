@@ -30,3 +30,5 @@
 28,momtaz/bert-finetuned-squad,2,bert-base-cased,True
 29,google/flan-t5-base,1,google/t5-v1_1-base,False
 30,nc33/deberta_finetune,3,microsoft/deberta-v3-base,False
+31,andreaparker/flan-t5-base-samsum,2,google/t5-v1_1-base,False
+32,devpranjal/deberta-v3-base-devrev-data,3,microsoft/deberta-v3-base,False
