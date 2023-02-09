@@ -328,3 +328,16 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
   copyright = {Creative Commons Attribution 4.0 International}
 }
 ```
+## Model Recycling
+
+[Evaluation on 36 datasets](https://ibm.github.io/model-recycling/model_gain_chart?avg=9.16&mnli_lp=nan&20_newsgroup=3.34&ag_news=1.49&amazon_reviews_multi=0.21&anli=13.91&boolq=16.75&cb=23.12&cola=9.97&copa=34.50&dbpedia=6.90&esnli=5.37&financial_phrasebank=18.66&imdb=0.33&isear=1.37&mnli=11.74&mrpc=16.63&multirc=6.24&poem_sentiment=14.62&qnli=3.41&qqp=6.18&rotten_tomatoes=2.98&rte=24.26&sst2=0.67&sst_5bins=5.44&stsb=20.68&trec_coarse=3.95&trec_fine=10.73&tweet_ev_emoji=13.39&tweet_ev_emotion=4.62&tweet_ev_hate=3.46&tweet_ev_irony=9.04&tweet_ev_offensive=1.69&tweet_ev_sentiment=0.75&wic=14.22&wnli=9.44&wsc=5.53&yahoo_answers=4.14&model_name=google%2Fflan-t5-base&base_name=google%2Ft5-v1_1-base) using google/flan-t5-base as a base model yields average score of 77.98 in comparison to 68.82 by google/t5-v1_1-base.
+
+The model is ranked 1st among all tested models for the google/t5-v1_1-base architecture as of 06/02/2023
+Results:
+
+|   20_newsgroup |   ag_news |   amazon_reviews_multi |    anli |   boolq |      cb |    cola |   copa |   dbpedia |   esnli |   financial_phrasebank |   imdb |   isear |    mnli |    mrpc |   multirc |   poem_sentiment |    qnli |     qqp |   rotten_tomatoes |     rte |    sst2 |   sst_5bins |    stsb |   trec_coarse |   trec_fine |   tweet_ev_emoji |   tweet_ev_emotion |   tweet_ev_hate |   tweet_ev_irony |   tweet_ev_offensive |   tweet_ev_sentiment |     wic |   wnli |     wsc |   yahoo_answers |
+|---------------:|----------:|-----------------------:|--------:|--------:|--------:|--------:|-------:|----------:|--------:|-----------------------:|-------:|--------:|--------:|--------:|----------:|-----------------:|--------:|--------:|------------------:|--------:|--------:|------------:|--------:|--------------:|------------:|-----------------:|-------------------:|----------------:|-----------------:|---------------------:|---------------------:|--------:|-------:|--------:|----------------:|
+|        86.2188 |   89.6667 |                  67.12 | 51.9688 | 82.3242 | 78.5714 | 80.1534 |     75 |   77.6667 | 90.9507 |                   85.4 | 93.324 |  72.425 | 87.2457 | 89.4608 |   62.3762 |          82.6923 | 92.7878 | 89.7724 |           89.0244 | 84.8375 | 94.3807 |     57.2851 | 89.4759 |          97.2 |        92.8 |           46.848 |            80.2252 |         54.9832 |          76.6582 |              84.3023 |              70.6366 | 70.0627 | 56.338 | 53.8462 |            73.4 |
+
+
+For more information, see: [Model Recycling](https://ibm.github.io/model-recycling/)
