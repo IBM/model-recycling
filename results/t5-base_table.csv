@@ -202,3 +202,7 @@
 200,jonathanybema/t5-base-twitter-sentiment,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 201,user336/t5-sum-checkpoint-2200,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 202,varadhbhatnagar/fc-claim-det-T5-base,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+203,Zekunli/t5-base-extraction-cnndm_fs0.1,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+204,Zekunli/t5-base-finetuned-cnndm_fs1.0-r,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+205,Zekunli/t5-base-summarization-cnndm_fs0.1,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+206,Zekunli/t5-base-summarization-cnndm_fs0.2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
