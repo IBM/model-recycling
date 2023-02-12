@@ -156,12 +156,12 @@ library_name: transformers
 
 # Model Card for DeBERTa-v3-base-tasksource-nli
 
-DeBERTa-v3-base fine-tuned jointly fine-tuned on 444 tasks of the [tasksource collection](https://github.com/sileod/tasksource/)
-You can fine-tune this model to use it for any classification or multiple-choice task.
+DeBERTa-v3-base fine-tuned with multi-task learning on 444 tasks of the [tasksource collection](https://github.com/sileod/tasksource/)
+You can further fine-tune this model to use it for any classification or multiple-choice task.
 This checkpoint has strong zero-shot validation performance on many tasks (e.g. 70% on WNLI).
 The untuned model CLS embedding also has strong linear probing performance (90% on MNLI), due to the multitask training.
 
-This is the shared model with the MNLI classifier on top. Its encoder was trained on many datasets including bigbench, Anthropic/hh-rlhf... alongside many NLI and classification tasks with a SequenceClassification heads while using only one shared encoder.
+This is the shared model with the MNLI classifier on top. Its encoder was trained on many datasets including bigbench, Anthropic rlhf, anli... alongside many NLI and classification tasks with a SequenceClassification heads while using only one shared encoder.
 Each task had a specific CLS embedding, which is dropped 10% of the time to facilitate model use without it. All multiple-choice model used the same classification layers. For classification tasks, models shared weights if their labels matched.
 The number of examples per task was capped to 64k. The model was trained for 20k steps with a batch size of 384, and a peak learning rate of 2e-5.
 
@@ -220,7 +220,7 @@ class MultiTask(transformers.DebertaV2ForMultipleChoice):
 
 model = MultiTask.from_pretrained("sileod/deberta-v3-base-tasksource-nli",ignore_mismatched_sizes=True)
 task_index = {k:v for v,k in dict(enumerate(model.config.tasks)).items()}[TASK_NAME]
-model.classifier = model.classifiers[task_index] # model is ready for $TASK_NAME ! 
+model.classifier = model.classifiers[task_index] # model is ready for $TASK_NAME ! (RLHF) ! 
 ```
 
 

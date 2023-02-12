@@ -33,3 +33,4 @@
 31,andreaparker/flan-t5-base-samsum,2,google/t5-v1_1-base,True
 32,devpranjal/deberta-v3-base-devrev-data,3,microsoft/deberta-v3-base,True
 33,sileod/deberta-v3-base-tasksource-nli,1,microsoft/deberta-v3-base,False
+34,skim945/bert-finetuned-squad,1,bert-base-cased,False
