@@ -81,3 +81,7 @@
 79,johannes5117/kadoa-page-extraction,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 80,mrm8488/flan-t5-base-common_gen,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 81,svjack/T5-dialogue-collect-v5,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+82,relbert/flan-t5-base-analogy-permutation,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+83,relbert/flan-t5-base-analogy-permutation-domain,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+84,shaiman12/flan-t5-base-samsum,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+85,spacemanidol/flan-t5-base-xsum,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
