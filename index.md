@@ -19,7 +19,7 @@ We download finetuned models found in HuggingFace per architecture and efficient
 We then evaluate the top ranked models by finetuning over a large set of 36 target tasks, and report the average
 performance of each base model.
 
-Tested so far: 2479 (and counting)
+Tested so far: 2499 (and counting)
 ## Best models per architectures
 <br>
 
