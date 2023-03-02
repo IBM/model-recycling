@@ -36,3 +36,5 @@
 34,skim945/bert-finetuned-squad,1,bert-base-cased,True
 35,emozilla/flan-t5-base-sat-reading-comprehension,1,google/t5-v1_1-base,False
 36,shri07/babi_qa,3,google/t5-v1_1-base,False
+37,algoprivacy/bert-finetuned-squad,3,bert-base-cased,False
+38,shaiman12/flan-t5-base-samsum,1,google/t5-v1_1-base,False
