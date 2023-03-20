@@ -118,3 +118,6 @@
 116,svjack/T5-dialogue-multi-v0,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 117,ismet/flan-t5-base-finetuned-asset,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 118,ismet/flan-t5-base-finetuned-turk,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+119,SummerSigh/T5-Base-Rule-Of-Thumb-RM2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+120,derek-thomas/flan-t5-end2end-question-generation,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+121,rezabny/t5-base-summary-finetuned_1,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

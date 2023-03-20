@@ -81,3 +81,7 @@
 79,lct-rug-2022/edos-2023-baseline-microsoft-deberta-v3-base-label_sexist,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 80,mariolinml/deberta-v3-base-finetuned-uf-ner-6X-0type_v1,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 81,nickmuchi/deberta-v3-base-finetuned-finance-text-classification,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+82,KISTI-AI/Scideberta-full,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+83,VMware/deberta-v3-base-mrqa,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+84,sileod/test3-adapter,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+85,wendys-llc/creepy-wapo,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
