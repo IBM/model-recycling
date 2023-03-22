@@ -8,10 +8,13 @@ tags:
 - natural-language-inference
 - multitask
 - multi-task
+- pipeline
 - extreme-multi-task
 - extreme-mtl
 - deberta-v3-base
 - tasksource
+- zero-shot
+- rlhf
 pipeline_tag: zero-shot-classification
 datasets:
 - hellaswag
