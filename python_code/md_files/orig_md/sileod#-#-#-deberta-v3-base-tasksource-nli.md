@@ -3,6 +3,8 @@ license: apache-2.0
 language: en
 tags:
 - deberta-v3-base
+- deberta-v3
+- deberta
 - text-classification
 - nli
 - natural-language-inference
@@ -11,147 +13,210 @@ tags:
 - pipeline
 - extreme-multi-task
 - extreme-mtl
-- deberta-v3-base
 - tasksource
 - zero-shot
 - rlhf
 pipeline_tag: zero-shot-classification
 datasets:
-- hellaswag
-- ag_news
-- pietrolesci/nli_fever
-- numer_sense
-- go_emotions
-- Ericwang/promptProficiency
-- poem_sentiment
-- pietrolesci/robust_nli_is_sd
-- sileod/probability_words_nli
-- social_i_qa
-- trec
-- imppres
-- pietrolesci/gen_debiased_nli
-- snips_built_in_intents
-- metaeval/imppres
-- metaeval/crowdflower
-- tals/vitaminc
-- dream
-- metaeval/babi_nli
-- Ericwang/promptSpoke
-- metaeval/ethics
-- art
-- ai2_arc
-- discovery
-- Ericwang/promptGrammar
-- code_x_glue_cc_clone_detection_big_clone_bench
-- prajjwal1/discosense
-- pietrolesci/joci
-- Anthropic/model-written-evals
-- utilitarianism
-- emo
-- tweets_hate_speech_detection
-- piqa
-- blog_authorship_corpus
-- SpeedOfMagic/ontonotes_english
-- circa
-- app_reviews
-- anli
-- Ericwang/promptSentiment
-- codah
-- definite_pronoun_resolution
-- health_fact
-- tweet_eval
-- hate_speech18
 - glue
-- hendrycks_test
-- paws
-- bigbench
-- hate_speech_offensive
-- blimp
-- sick
-- turingbench/TuringBench
-- martn-nguyen/contrast_nli
-- Anthropic/hh-rlhf
-- openbookqa
-- species_800
-- alisawuffles/WANLI
-- ethos
-- pietrolesci/mpe
-- wiki_hop
-- pietrolesci/glue_diagnostics
-- mc_taco
-- quarel
-- PiC/phrase_similarity
-- strombergnlp/rumoureval_2019
-- quail
-- acronym_identification
-- pietrolesci/robust_nli
-- quora
-- wnut_17
-- dynabench/dynasent
-- pietrolesci/gpt3_nli
-- truthful_qa
-- pietrolesci/add_one_rte
-- pietrolesci/breaking_nli
-- copenlu/scientific-exaggeration-detection
-- medical_questions_pairs
-- rotten_tomatoes
-- scicite
-- scitail
-- pietrolesci/dialogue_nli
-- code_x_glue_cc_defect_detection
-- nightingal3/fig-qa
-- pietrolesci/conj_nli
-- liar
-- sciq
-- head_qa
-- pietrolesci/dnc
-- quartz
-- wiqa
-- code_x_glue_cc_code_refinement
-- Ericwang/promptCoherence
-- joey234/nan-nli
-- hope_edi
-- jnlpba
-- yelp_review_full
-- pietrolesci/recast_white
-- swag
-- banking77
-- cosmos_qa
-- financial_phrasebank
-- hans
-- pietrolesci/fracas
-- math_qa
-- conll2003
-- qasc
-- ncbi_disease
-- mwong/fever-evidence-related
-- YaHi/EffectiveFeedbackStudentWriting
-- ade_corpus_v2
-- amazon_polarity
-- pietrolesci/robust_nli_li_ts
 - super_glue
-- adv_glue
-- Ericwang/promptNLI
-- cos_e
-- launch/open_question_type
-- lex_glue
-- has_part
-- pragmeval
-- sem_eval_2010_task_8
-- imdb
-- humicroedit
-- sms_spam
-- dbpedia_14
-- commonsense_qa
-- hlgd
+- anli
+- metaeval/babi_nli
+- sick
 - snli
-- hyperpartisan_news_detection
-- google_wellformed_query
-- raquiba/Sarcasm_News_Headline
+- scitail
+- hans
+- alisawuffles/WANLI
 - metaeval/recast
+- sileod/probability_words_nli
+- joey234/nan-nli
+- pietrolesci/nli_fever
+- pietrolesci/breaking_nli
+- pietrolesci/conj_nli
+- pietrolesci/fracas
+- pietrolesci/dialogue_nli
+- pietrolesci/mpe
+- pietrolesci/dnc
+- pietrolesci/gpt3_nli
+- pietrolesci/recast_white
+- pietrolesci/joci
+- martn-nguyen/contrast_nli
+- pietrolesci/robust_nli
+- pietrolesci/robust_nli_is_sd
+- pietrolesci/robust_nli_li_ts
+- pietrolesci/gen_debiased_nli
+- pietrolesci/add_one_rte
+- metaeval/imppres
+- pietrolesci/glue_diagnostics
+- hlgd
+- paws
+- quora
+- medical_questions_pairs
+- conll2003
+- Anthropic/hh-rlhf
+- Anthropic/model-written-evals
+- truthful_qa
+- nightingal3/fig-qa
+- tasksource/bigbench
+- blimp
+- cos_e
+- cosmos_qa
+- dream
+- openbookqa
+- qasc
+- quartz
+- quail
+- head_qa
+- sciq
+- social_i_qa
+- wiki_hop
+- wiqa
+- piqa
+- hellaswag
+- pkavumba/balanced-copa
+- 12ml/e-CARE
+- art
+- tasksource/mmlu
 - winogrande
+- codah
+- ai2_arc
+- definite_pronoun_resolution
+- swag
+- math_qa
+- metaeval/utilitarianism
+- mteb/amazon_counterfactual
+- SetFit/insincere-questions
+- SetFit/toxic_conversations
+- turingbench/TuringBench
+- trec
+- tals/vitaminc
+- hope_edi
+- strombergnlp/rumoureval_2019
+- ethos
+- tweet_eval
+- discovery
+- pragmeval
+- silicone
+- lex_glue
+- papluca/language-identification
+- imdb
+- rotten_tomatoes
+- ag_news
+- yelp_review_full
+- financial_phrasebank
+- poem_sentiment
+- dbpedia_14
+- amazon_polarity
+- app_reviews
+- hate_speech18
+- sms_spam
+- humicroedit
+- snips_built_in_intents
+- banking77
+- hate_speech_offensive
+- yahoo_answers_topics
+- pacovaldez/stackoverflow-questions
+- zapsdcn/hyperpartisan_news
+- zapsdcn/sciie
+- zapsdcn/citation_intent
+- go_emotions
+- scicite
+- liar
 - relbert/lexical_relation_classification
 - metaeval/linguisticprobing
+- metaeval/crowdflower
+- metaeval/ethics
+- emo
+- google_wellformed_query
+- tweets_hate_speech_detection
+- has_part
+- wnut_17
+- ncbi_disease
+- acronym_identification
+- jnlpba
+- species_800
+- SpeedOfMagic/ontonotes_english
+- blog_authorship_corpus
+- launch/open_question_type
+- health_fact
+- commonsense_qa
+- mc_taco
+- ade_corpus_v2
+- prajjwal1/discosense
+- circa
+- YaHi/EffectiveFeedbackStudentWriting
+- Ericwang/promptSentiment
+- Ericwang/promptNLI
+- Ericwang/promptSpoke
+- Ericwang/promptProficiency
+- Ericwang/promptGrammar
+- Ericwang/promptCoherence
+- PiC/phrase_similarity
+- copenlu/scientific-exaggeration-detection
+- quarel
+- mwong/fever-evidence-related
+- numer_sense
+- dynabench/dynasent
+- raquiba/Sarcasm_News_Headline
+- sem_eval_2010_task_8
+- demo-org/auditor_review
+- medmcqa
+- aqua_rat
+- RuyuanWan/Dynasent_Disagreement
+- RuyuanWan/Politeness_Disagreement
+- RuyuanWan/SBIC_Disagreement
+- RuyuanWan/SChem_Disagreement
+- RuyuanWan/Dilemmas_Disagreement
+- lucasmccabe/logiqa
+- wiki_qa
+- metaeval/cycic_classification
+- metaeval/cycic_multiplechoice
+- metaeval/sts-companion
+- metaeval/commonsense_qa_2.0
+- metaeval/lingnli
+- metaeval/monotonicity-entailment
+- metaeval/arct
+- metaeval/scinli
+- metaeval/naturallogic
+- onestop_qa
+- demelin/moral_stories
+- corypaik/prost
+- aps/dynahate
+- metaeval/syntactic-augmentation-nli
+- metaeval/autotnli
+- lasha-nlp/CONDAQA
+- openai/webgpt_comparisons
+- Dahoas/synthetic-instruct-gptj-pairwise
+- metaeval/scruples
+- metaeval/wouldyourather
+- sileod/attempto-nli
+- metaeval/defeasible-nli
+- metaeval/help-nli
+- metaeval/nli-veridicality-transitivity
+- metaeval/natural-language-satisfiability
+- metaeval/lonli
+- metaeval/dadc-limit-nli
+- ColumbiaNLP/FLUTE
+- metaeval/strategy-qa
+- openai/summarize_from_feedback
+- metaeval/folio
+- metaeval/tomi-nli
+- metaeval/avicenna
+- stanfordnlp/SHP
+- GBaker/MedQA-USMLE-4-options-hf
+- sileod/wikimedqa
+- declare-lab/cicero
+- amydeng2000/CREAK
+- metaeval/mutual
+- inverse-scaling/NeQA
+- inverse-scaling/quote-repetition
+- inverse-scaling/redefine-math
+- metaeval/puzzte
+- metaeval/implicatures
+- race
+- metaeval/spartqa-yn
+- metaeval/spartqa-mchoice
+- metaeval/temporal-nli
 metrics:
 - accuracy
 library_name: transformers
@@ -159,16 +224,16 @@ library_name: transformers
 
 # Model Card for DeBERTa-v3-base-tasksource-nli
 
-DeBERTa-v3-base fine-tuned with multi-task learning on 444 tasks of the [tasksource collection](https://github.com/sileod/tasksource/)
+DeBERTa-v3-base fine-tuned with multi-task learning on 520 tasks of the [tasksource collection](https://github.com/sileod/tasksource/)
+This checkpoint has strong zero-shot validation performance on many tasks (e.g. 70% on WNLI), and can be used for zero-shot NLI pipeline (similar to bart-mnli but better).
 You can further fine-tune this model to use it for any classification or multiple-choice task.
-This checkpoint has strong zero-shot validation performance on many tasks (e.g. 70% on WNLI).
 The untuned model CLS embedding also has strong linear probing performance (90% on MNLI), due to the multitask training.
 
-This is the shared model with the MNLI classifier on top. Its encoder was trained on many datasets including bigbench, Anthropic rlhf, anli... alongside many NLI and classification tasks with a SequenceClassification heads while using only one shared encoder.
+This is the shared model with the MNLI classifier on top. Its encoder was trained on many datasets including bigbench, Anthropic rlhf, anli... alongside many NLI and classification tasks with one shared encoder.
 Each task had a specific CLS embedding, which is dropped 10% of the time to facilitate model use without it. All multiple-choice model used the same classification layers. For classification tasks, models shared weights if their labels matched.
-The number of examples per task was capped to 64k. The model was trained for 20k steps with a batch size of 384, and a peak learning rate of 2e-5.
+The number of examples per task was capped to 64k. The model was trained for 45k steps with a batch size of 384, and a peak learning rate of 2e-5.
 
-The list of tasks is available in tasks.md
+The list of tasks is available in model config.
 
 tasksource training code: https://colab.research.google.com/drive/1iB4Oxl9_B5W3ZDzXoWJN-olUbqLBxgQS?usp=sharing
 
@@ -206,25 +271,9 @@ More details on this [article:](https://arxiv.org/abs/2301.05948)
 ```
 
 # Loading a specific classifier
+Classifiers for all tasks available. See https://huggingface.co/sileod/deberta-v3-base-tasksource-adapters
 
-Classifiers for all tasks available.
-```python
-from torch import nn
-
-TASK_NAME = "hh-rlhf"
-
-class MultiTask(transformers.DebertaV2ForMultipleChoice):
-   def __init__(self, *args, **kwargs):
-        super().__init__(*args)
-        n=len(self.config.tasks)
-        cs=self.config.classifiers_size
-        self.Z = nn.Embedding(n,768)
-        self.classifiers = nn.ModuleList([torch.nn.Linear(*size) for size in cs])
-
-model = MultiTask.from_pretrained("sileod/deberta-v3-base-tasksource-nli",ignore_mismatched_sizes=True)
-task_index = {k:v for v,k in dict(enumerate(model.config.tasks)).items()}[TASK_NAME]
-model.classifier = model.classifiers[task_index] # model is ready for $TASK_NAME ! (RLHF) ! 
-```
+<img src="https://www.dropbox.com/s/eyfw8i1ekzxj3fa/task_embeddings.png?dl=1"  width="1000" height="">
 
 
 # Model Card Contact

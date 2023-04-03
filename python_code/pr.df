@@ -39,3 +39,4 @@
 37,algoprivacy/bert-finetuned-squad,3,bert-base-cased,False
 38,shaiman12/flan-t5-base-samsum,1,google/t5-v1_1-base,False
 39,ericntay/stbl_clinical_bert_ft_rs1,1,bert-base-cased,False
+40,jakub014/ColD-Fusion-finetuned-convincingness-acl2016,3,roberta-base,False
