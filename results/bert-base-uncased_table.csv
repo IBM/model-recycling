@@ -560,3 +560,7 @@
 558,faviasono/bert-base-banking77-pt2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 559,lwieske/wip-bert-finetuned-imdbreviews-fast,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 560,seongwoon/Bert_labor_space_token_256_batch_16_not_firm,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+561,khs05109/bert-base-uncased-finetuned-sst2,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+562,seongwoon/bert_labor_space_token_128_batch_64_0.0001_not_firm,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+563,seongwoon/bert_labor_space_token_128_batch_64_0.0003_not_firm,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+564,seongwoon/bert_labor_space_token_128_batch_64_5e-05_not_firm,,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
